@@ -1,0 +1,77 @@
+.about-hero {
+  padding-bottom: 150px;
+
+  &__title {
+    display: flex;
+    align-self: center;
+    flex-wrap: wrap;
+    margin-bottom: 60px;
+
+    h1,
+    .title-2,
+    h2,
+    .title-2 {
+      max-width: 900px;
+      margin-right: 80px;
+    }
+  }
+}
+
+.who-we-are {
+  &__content {
+    p {
+      font-size: 14px;
+      margin-bottom: 30px;
+      max-width: 660px;
+    }
+
+    strong {
+      font-size: 18px;
+      line-height: 1.333em;
+      color: $titleColor;
+      max-width: 660px;
+    }
+
+    img,
+    picture {
+      max-width: 450px;
+      display: inline-block;
+      margin-bottom: 40px;
+    }
+  }
+}
+
+.values {
+  padding: 200px 0;
+
+  &__title {
+    margin-bottom: 150px;
+  }
+
+  &-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &-box {
+    max-width: 280px;
+
+    img,
+    picture {
+      height: 80px;
+      margin-bottom: 80px;
+      width: auto;
+    }
+
+    .title-4,
+    h4 {
+      margin-bottom: 5px;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
