@@ -33,23 +33,6 @@ let windowWidth = window.innerWidth;
 //   });
 // }
 
-// const hamburger = $(".js-hamburger");
-// const headerMenu = $(".menu");
-
-// function openMenu() {
-//   hamburger.addClass('open');
-//   headerMenu.addClass('open');
-// }
-
-// function closeMenu() {
-//   hamburger.removeClass('open');
-//   headerMenu.removeClass('open');
-// }
-
-// function showContent() {
-// $(".main-wrapper").removeClass("js-fadeIn");
-// }
-
 const showContent = () => {
   document.querySelector(".main-wrapper").classList.remove("js-fade-in");
 };
