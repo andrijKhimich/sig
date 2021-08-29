@@ -1,192 +1,193 @@
 // footer styles
 .footer {
-	padding: 116px 0 30px 0;
-	background-color: #242424;
-	color: $primary;
+  padding: 116px 0 30px 0;
+  background-color: #242424;
+  color: $primary;
 
-	@include d(1199) {
-		padding: 80px 0 30px 0;
-	}
-	@include d(767) {
-		padding: 60px 0 0 0;
-	}
-	&__logo {
-		margin-bottom: 70px;
-		@include d(991) {
-			padding-left: 0;
-		}
-		@include d(767) {
-			margin-bottom: 40px;
-		}
-	}
+  @include d(1199) {
+    padding: 80px 0 30px 0;
+  }
+  @include d(767) {
+    padding: 60px 0 0 0;
+  }
 
-	.title-2,
-	h2 {
-		margin-bottom: 20px;
-		color: $primary;
-	}
+  &__logo {
+    margin-bottom: 70px;
+    @include d(991) {
+      padding-left: 0;
+    }
+    @include d(767) {
+      margin-bottom: 40px;
+    }
+  }
 
-	&__content {
-		display: flex;
-		flex-wrap: wrap;
-		margin: 0 -30px;
-		justify-content: space-between;
-	}
+  .title-2,
+  h2 {
+    margin-bottom: 20px;
+    color: $primary;
+  }
 
-	&-social {
-		&__list {
-			display: flex;
-			align-items: center;
-			margin-bottom: 50px;
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -30px;
+    justify-content: space-between;
+  }
 
-			li:not(:last-child) {
-				margin-right: 20px;
-			}
-		}
-	}
+  &-social {
+    &__list {
+      display: flex;
+      align-items: center;
+      margin-bottom: 50px;
 
-	&-box {
-		max-width: 20%;
-		width: 100%;
-		padding: 0 30px;
-		margin-bottom: 60px;
+      li:not(:last-child) {
+        margin-right: 20px;
+      }
+    }
+  }
 
-		@include d(991) {
-			max-width: 50%;
-			order: 2;
-		}
+  &-box {
+    max-width: 20%;
+    width: 100%;
+    padding: 0 30px;
+    margin-bottom: 60px;
 
-		@include d(575) {
-			max-width: 100%;
-			margin-bottom: 30px;
-		}
+    @include d(991) {
+      max-width: 50%;
+      order: 2;
+    }
 
-		.contact-info {
-			position: static;
-			background-color: transparent;
-			padding: 0;
-			box-shadow: none;
-			max-width: 100%;
+    @include d(575) {
+      max-width: 100%;
+      margin-bottom: 30px;
+    }
 
-			&__box {
-				&:not(:last-child) {
-					margin-bottom: 0;
-				}
-			}
-		}
+    .contact-info {
+      position: static;
+      background-color: transparent;
+      padding: 0;
+      box-shadow: none;
+      max-width: 100%;
 
-		.title-4,
-		h4 {
-			margin-bottom: 20px;
-		}
+      &__box {
+        &:not(:last-child) {
+          margin-bottom: 0;
+        }
+      }
+    }
 
-		.svg-icon_sm {
-			fill: $primary;
-		}
+    .title-4,
+    h4 {
+      margin-bottom: 20px;
+    }
 
-		&:first-child {
-			max-width: 40%;
+    .svg-icon_sm {
+      fill: $primary;
+    }
 
-			@include d(991) {
-				max-width: 50%;
-				order: 0;
-			}
+    &:first-child {
+      max-width: 40%;
 
-			@include d(575) {
-				max-width: 100%;
-			}
-		}
+      @include d(991) {
+        max-width: 50%;
+        order: 0;
+      }
 
-		&:nth-child(5) {
-			max-width: 40%;
+      @include d(575) {
+        max-width: 100%;
+      }
+    }
 
-			@include d(991) {
-				max-width: 50%;
-				order: 1;
-			}
+    &:nth-child(5) {
+      max-width: 40%;
 
-			@include d(575) {
-				max-width: 100%;
-				order: 3;
-			}
-		}
+      @include d(991) {
+        max-width: 50%;
+        order: 1;
+      }
 
-		&:nth-child(9) {
-			margin-right: 0;
-			margin-left: auto;
-		}
+      @include d(575) {
+        max-width: 100%;
+        order: 3;
+      }
+    }
 
-		ul {
-			li {
-				margin-bottom: 7px;
-			}
-		}
+    &:nth-child(9) {
+      margin-right: 0;
+      margin-left: auto;
+    }
 
-		&:nth-child(3),
-		&:nth-child(4) {
-			margin-top: 50px;
+    ul {
+      li {
+        margin-bottom: 7px;
+      }
+    }
 
-			@include d(575) {
-				margin-top: 0;
-			}
-		}
+    &:nth-child(3),
+    &:nth-child(4) {
+      margin-top: 50px;
 
-		&:nth-child(2),
-		&:nth-child(3),
-		&:nth-child(4) {
-			ul {
-				li:first-child {
-					text-transform: uppercase;
-					font-weight: 700;
-					font-size: 12px;
-					margin-bottom: 12px;
-				}
-			}
-		}
-	}
+      @include d(575) {
+        margin-top: 0;
+      }
+    }
 
-	&-form {
-		input {
-			width: 100%;
-			background-color: transparent;
-			color: $primary;
-			height: 30px;
-			border-bottom: 1px solid $primary;
-			line-height: 30px;
+    &:nth-child(2),
+    &:nth-child(3),
+    &:nth-child(4) {
+      ul {
+        li:first-child {
+          text-transform: uppercase;
+          font-weight: 700;
+          font-size: 12px;
+          margin-bottom: 12px;
+        }
+      }
+    }
+  }
 
-			&::-webkit-input-placeholder {
-				font-family: inherit;
-				font-size: 14px;
-				color: $primary;
-			}
+  &-form {
+    input {
+      width: 100%;
+      background-color: transparent;
+      color: $primary;
+      height: 30px;
+      border-bottom: 1px solid $primary;
+      line-height: 30px;
 
-			&::-moz-placeholder {
-				font-family: inherit;
-				font-size: 14px;
-				color: $primary;
-			}
+      &::-webkit-input-placeholder {
+        font-family: inherit;
+        font-size: 14px;
+        color: $primary;
+      }
 
-			&:-ms-input-placeholder {
-				font-family: inherit;
-				font-size: 14px;
-				color: $primary;
-			}
+      &::-moz-placeholder {
+        font-family: inherit;
+        font-size: 14px;
+        color: $primary;
+      }
 
-			&::placeholder {
-				font-family: inherit;
-				font-size: 14px;
-				color: $primary;
-			}
-		}
-	}
+      &:-ms-input-placeholder {
+        font-family: inherit;
+        font-size: 14px;
+        color: $primary;
+      }
+
+      &::placeholder {
+        font-family: inherit;
+        font-size: 14px;
+        color: $primary;
+      }
+    }
+  }
 }
 
 .svg-icon_social {
-	width: 20px;
-	height: 20px;
-	fill: $primary;
+  width: 20px;
+  height: 20px;
+  fill: $primary;
 }
 
 .copyright {
-	font-size: 14px;
+  font-size: 14px;
 }

@@ -4,7 +4,7 @@
 
   @include d(767) {
     height: auto;
-    
+
   }
 
   &-banner {
@@ -60,6 +60,7 @@
       padding-left: 15px;
       .read-more_circle {
         border-color: $black;
+
         .svg-icon_md {
           stroke: $black;
         }
@@ -121,7 +122,7 @@
 
     @include d(991) {
       margin: 40px auto;
-      max-width:100%;
+      max-width: 100%;
       text-align: left;
     }
 

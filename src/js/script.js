@@ -86,7 +86,7 @@ document.addEventListener("DOMContentLoaded", function () {
   showContent();
   toggleFormBtn.addEventListener("click", toggleHeaderForm);
 
-  var subItem = document.getElementsByClassName("menu-item_icon");
+  let subItem = document.getElementsByClassName("menu-item_icon");
 
   for (let i = 0; i < subItem.length; i++) {
     subItem[i].addEventListener("click", function () {
