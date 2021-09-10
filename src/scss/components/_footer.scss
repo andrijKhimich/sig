@@ -2,7 +2,7 @@
 .footer {
   padding: 116px 0 30px 0;
   background-color: #242424;
-  color: $primary;
+  color: $white;
 
   @include d(1199) {
     padding: 80px 0 30px 0;
@@ -24,7 +24,7 @@
   .title-2,
   h2 {
     margin-bottom: 20px;
-    color: $primary;
+    color: $white;
   }
 
   &__content {
@@ -82,7 +82,7 @@
     }
 
     .svg-icon_sm {
-      fill: $primary;
+      fill: $white;
     }
 
     &:first-child {
@@ -150,33 +150,33 @@
     input {
       width: 100%;
       background-color: transparent;
-      color: $primary;
+      color: $white;
       height: 30px;
-      border-bottom: 1px solid $primary;
+      border-bottom: 1px solid $white;
       line-height: 30px;
 
       &::-webkit-input-placeholder {
         font-family: inherit;
         font-size: 14px;
-        color: $primary;
+        color: $white;
       }
 
       &::-moz-placeholder {
         font-family: inherit;
         font-size: 14px;
-        color: $primary;
+        color: $white;
       }
 
       &:-ms-input-placeholder {
         font-family: inherit;
         font-size: 14px;
-        color: $primary;
+        color: $white;
       }
 
       &::placeholder {
         font-family: inherit;
         font-size: 14px;
-        color: $primary;
+        color: $white;
       }
     }
   }
@@ -185,7 +185,7 @@
 .svg-icon_social {
   width: 20px;
   height: 20px;
-  fill: $primary;
+  fill: $white;
 }
 
 .copyright {

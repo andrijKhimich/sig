@@ -78,7 +78,10 @@ h2 {
   font-size: 64px;
   line-height: 1.094em;
   color: $titleColor;
-
+  @include d(1199) {
+    font-size: 54px;
+  }
+  
   @include d(991) {
     font-size: 48px;
   }
@@ -304,6 +307,39 @@ textarea {
       background-image: url(../img/svg/triangle-down-black.svg);
     }
   }
+
+  .btn-search {
+    background-image: url(../img/svg/search-black.svg);
+  }
+  .search-form .btn-search.active {
+    background-image: url(../img/svg/close-black.svg);
+  }
+  .search-form form input {
+    color: $black;
+    &::-webkit-input-placeholder {
+      font-family: inherit;
+      font-size: 16px;
+      color: $textColor;
+    }
+
+    &::-moz-placeholder {
+      font-family: inherit;
+      font-size: 16px;
+      color: $black;
+    }
+
+    &:-ms-input-placeholder {
+      font-family: inherit;
+      font-size: 16px;
+      color: $black;
+    }
+
+    &::placeholder {
+      font-family: inherit;
+      font-size: 16px;
+      color: $black;
+    }
+  }
 }
 
 .container {
@@ -495,6 +531,17 @@ textarea {
   &:disabled {
     background-color: $grey1;
     color: $grey;
+  }
+}
+
+.article-gallery {
+  display: flex;
+  justify-content: space-between;
+
+  img,
+  picture {
+    flex: 0 0 49%;
+    height: 300px
   }
 }
 

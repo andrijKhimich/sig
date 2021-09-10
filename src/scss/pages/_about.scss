@@ -75,3 +75,18 @@
     }
   }
 }
+
+.map {
+  margin-bottom: 150px;
+  height: 560px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  @include d(1199) {
+    margin-bottom: 100px;
+  }
+
+  @include d(991) {
+    margin-bottom: 60px;
+  }
+}
