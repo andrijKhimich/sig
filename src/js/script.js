@@ -44,6 +44,14 @@ const detectSubMenu = () => {
 	});
 };
 
+const detectSubList = () => {
+	const sublist = document.querySelectorAll(".expertise-accordion__sublist");
+	sublist.forEach(function (item) {
+		item.parentElement.classList.add("expertise-accordion__item_icon");
+	});
+};
+
+detectSubList();
 detectSubMenu();
 
 const toggleFormBtn = document.querySelector(".js-toggle-form");
@@ -99,7 +107,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		});
 	}
-
+	// if (windowWidth >= 991 && windowWidth <= 767) {
+	console.log("hello")
 	let accordionItem = document.querySelectorAll(".js-accordion-item");
 	for (let i = 0; i < accordionItem.length; i++) {
 		accordionItem[i].addEventListener("click", function () {
@@ -112,6 +121,8 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		});
 	}
+	// }
+
 
 	burger.addEventListener("click", function () {
 		if (this.classList.contains("active")) {
@@ -122,10 +133,13 @@ document.addEventListener("DOMContentLoaded", function () {
 	});
 
 	initKnowledgeSlider();
-
+	initExpertiseMenu();
 	window.addEventListener("resize", function () {
 		if (windowWidth < 991) {
 			initKnowledgeSlider();
+		}
+		if (windowWidth < 767) {
+			initExpertiseMenu();
 		}
 	});
 });
@@ -162,6 +176,42 @@ function initKnowledgeSlider() {
 		});
 	}
 }
+
+function initExpertiseMenu() {
+	const knowledgeSlider = document.querySelector(
+		"#expertiseMenu.slick-slider"
+	);
+	if ($(window).width() < 767 && !knowledgeSlider) {
+		$("#expertiseMenu").slick({
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			dots: false,
+			arrows: false,
+			infinite: false,
+			mobileFirst: true,
+			adaptiveHeight: true,
+			responsive: [{
+					breakpoint: 768,
+					settings: "unslick",
+				},
+				{
+					breakpoint: 575,
+					settings: {
+						slidesToShow: 3,
+					},
+				},
+				{
+					breakpoint: 320,
+					settings: {
+						slidesToShow: 2,
+					},
+				},
+			],
+		});
+	}
+}
+
+
 
 $(document).ready(function () {
 	// if ($('.inner-page').length > 0) {

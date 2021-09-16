@@ -66,11 +66,38 @@
     &__item {
       font-size: 18px;
       font-weight: 900;
-      padding-left: 15px;
       position: relative;
       margin-bottom: 20px;
       cursor: pointer;
       transition: color $hover-duration $timing;
+
+      @include d(767) {
+        pointer-events: none;
+      }
+
+      &>a {
+        position: relative;
+        padding-left: 15px;
+
+        @include d(767) {
+          padding-left: 0;
+          padding-right: 20px;
+          margin-bottom: 10px;
+        }
+      }
+
+      &.slick-current {
+        pointer-events: initial;
+
+        &>a {
+          color: $black;
+
+          &::after {
+            background-image: url(../img/svg/arrow-down.svg);
+          }
+        }
+
+      }
 
       @include d(1199) {
         font-size: 16px;
@@ -79,43 +106,95 @@
       @include d(991) {
         font-size: 14px;
         flex: 0 0 25%;
+        padding-left: 0;
+        padding-right: 10px;
       }
 
-      &.active {
-        color: $titleColor;
+      @include d(767) {
+        padding-right: 20px;
+        flex: 0 0 auto;
+        color: $grey;
+        font-weight: 400;
+      }
 
-        &::after {
-          transform: rotate(90deg);
-          background-color: $titleColor;
+      &:not(:last-child) {
+        @include d(991) {
+          border-right: 1px solid $grey1;
+          margin-right: 10px;
         }
 
-        &::before {
-          background-color: $titleColor;
+        @include d(767) {
+          border-right: none;
+          margin-right: 0;
         }
       }
 
-      &::before,
-      &::after {
-        content: "";
-        position: absolute;
-        background-color: $black;
-      }
 
-      &::before {
-        width: 8px;
-        height: 2px;
-        top: 14px;
-        left: 0;
-        transition: background-color $hover-duration $timing;
-      }
+      &_icon {
+        &>a {
 
-      &::after {
-        width: 2px;
-        height: 8px;
-        top: 11px;
-        left: 3px;
-        transform: rotate(0);
-        transition: transform $hover-duration $timing, background-color $hover-duration $timing;
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            background-color: $black;
+
+            @include d(991) {
+              display: none;
+            }
+          }
+
+          &::before {
+            width: 8px;
+            height: 2px;
+            top: 10px;
+            left: 0;
+            transition: background-color $hover-duration $timing;
+          }
+
+          &::after {
+            width: 2px;
+            height: 8px;
+            top: 7px;
+            left: 3px;
+            transform: rotate(0);
+            transition: transform $hover-duration $timing, background-color $hover-duration $timing;
+
+            @include d(767) {
+              display: block;
+              width: 12px;
+              background-image: url(../img/svg/arrow-down-grey.svg);
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+              background-color: transparent;
+              top: 6px;
+              left: auto;
+              right: 0;
+            }
+          }
+        }
+
+        &.active {
+          color: $titleColor;
+          font-weight: 600;
+
+          a {
+            &::after {
+              transform: rotate(90deg);
+              background-color: $titleColor;
+
+              @include d(767) {
+                background-color: transparent;
+                transform: rotate(180deg);
+              }
+            }
+
+            &::before {
+              background-color: $titleColor;
+            }
+          }
+        }
       }
     }
 
@@ -123,6 +202,19 @@
       max-height: 0;
       overflow: hidden;
       transition: max-height $hover-duration $timing;
+
+      @include d(991) {
+        max-height: 100%;
+        overflow: visible;
+        margin-top: 15px;
+      }
+
+      @include d(767) {
+        max-height: 0;
+        overflow: hidden;
+        margin-top: 0;
+
+      }
     }
 
     &__subitem {
@@ -132,6 +224,10 @@
       position: relative;
       color: $black;
       margin-bottom: 10px;
+
+      @include d(991) {
+        font-size: 14px;
+      }
 
       &:hover a {
         color: $titleColor;
@@ -159,6 +255,11 @@
       padding-bottom: 60px;
     }
 
+    @include d(767) {
+      flex-wrap: wrap;
+      padding-bottom: 40px;
+    }
+
     &:not(:last-child) {
       border-bottom: 1px solid $grey1;
       margin-bottom: 80px;
@@ -171,14 +272,35 @@
     &__img {
       max-width: 340px;
       margin-right: 45px;
+      flex: 0 0 340px;
 
       @include d(1199) {
         margin-right: 30px;
+      }
+
+      @include d(767) {
+        max-width: 100%;
+        flex: 0 0 100%;
+        margin-bottom: 20px;
+        overflow: hidden;
+
+      }
+
+      img {
+        @include d(767) {
+          max-height: 400px;
+          object-fit: cover;
+          object-position: center;
+        }
       }
     }
 
     &__content {
       max-width: 550px;
+
+      @include d(767) {
+        max-width: 100%;
+      }
 
       .title-2,
       h2 {
@@ -285,6 +407,13 @@
   display: flex;
   flex-wrap: wrap;
   padding: 20px 0 20px 40px;
+
+  @include d(991) {
+    padding-left: 0;
+    border: none;
+    margin-bottom: 20px;
+    padding-top: 0;
+  }
 
   &__title {
     flex: 0 0 100%;

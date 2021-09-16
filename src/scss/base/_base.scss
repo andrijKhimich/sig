@@ -78,10 +78,11 @@ h2 {
   font-size: 64px;
   line-height: 1.094em;
   color: $titleColor;
+
   @include d(1199) {
     font-size: 54px;
   }
-  
+
   @include d(991) {
     font-size: 48px;
   }
@@ -182,6 +183,10 @@ ol {
 
   &__title {
     margin-bottom: 40px;
+
+    @include d(991) {
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -311,11 +316,14 @@ textarea {
   .btn-search {
     background-image: url(../img/svg/search-black.svg);
   }
+
   .search-form .btn-search.active {
     background-image: url(../img/svg/close-black.svg);
   }
+
   .search-form form input {
     color: $black;
+
     &::-webkit-input-placeholder {
       font-family: inherit;
       font-size: 16px;
@@ -534,14 +542,97 @@ textarea {
   }
 }
 
+.article-date {
+  text-align: right;
+
+  @include d(767) {
+    text-align: left;
+    margin: 20px 0 0 0;
+  }
+}
+
+.article__title {
+  max-width: 1100px
+}
+
+.article-description {
+  color: $grey;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+}
+
+.share {
+  display: flex;
+  align-items: center;
+  padding: 0 15px;
+  & .article-description {
+    margin-bottom: 0;
+  }
+
+  &-list {
+    display: flex;
+    margin-left: 15px;
+    li {
+      &:not(:last-child) {
+        margin-right: 15px;
+      }
+
+      .svg-icon_sm {
+        width: 15px;
+        height: 15px;
+        fill: $grey;
+
+        &:hover {
+          fill: $primary;
+        }
+      }
+    }
+  }
+}
+
+.article-details {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 850px;
+  margin: 0 -15px;
+  padding: 20px 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+  @include d(767) {
+    display: block;
+  }
+
+  &>.article-description {
+    padding: 0 15px;
+
+    @include d(767) {
+      margin-bottom: 15px;
+    }
+  }
+}
+
 .article-gallery {
   display: flex;
   justify-content: space-between;
+  margin: 40px 0;
+
+  @include d(767) {
+    display: block;
+    margin: 0 25px;
+  }
 
   img,
   picture {
     flex: 0 0 49%;
-    height: 300px
+    height: 300px;
+    object-fit: cover;
+
+    @include d(767) {
+      height: auto;
+      margin-bottom: 20px;
+    }
   }
 }
 
@@ -588,9 +679,38 @@ textarea {
 
 .card {
   max-width: 316px;
+  margin-bottom: 40px;
+
+  @include d(767) {
+    margin: 0 auto 20px auto;
+    position: relative;
+
+    &::before {
+      content: "";
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(180deg, rgba(38, 38, 38, 0) 42.64%, #262626 100%);
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+  }
 
   img {
     margin-bottom: 30px;
+
+    @include d(767) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__content {
+    @include d(767) {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      color: $white;
+    }
   }
 
   p {

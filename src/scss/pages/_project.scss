@@ -1,0 +1,308 @@
+.project {
+  &-hero {
+    &__title {
+      color: $titleColor;
+      margin-bottom: 15px;
+    }
+
+    &__img {
+      max-width: 530px;
+      flex: 0 0 530px;
+      margin-right: 0;
+      margin-left: auto;
+
+      @include d(767) {
+        max-width: calc(100% + 30px);
+        margin: 0 -15px;
+      }
+    }
+  }
+
+}
+
+.address {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 480px;
+  padding: 40px 0;
+  margin: 0 -15px;
+
+  &__box {
+    font-size: 14px;
+    flex: 0 0 240px;
+    max-width: 50%;
+    margin-bottom: 20px;
+    padding: 0 15px;
+  }
+}
+
+.services {
+  padding: 100px 0;
+
+  @include d(1199) {
+    padding: 80px 0;
+  }
+
+  @include d (991) {
+    padding: 60px 0;
+  }
+
+  &__title {
+
+    .title-2,
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 540px;
+      font-size: 14px;
+    }
+  }
+
+  &__list {
+    counter-reset: counter;
+  }
+
+  &__item {
+    counter-increment: counter;
+    position: relative;
+    padding-left: 100px;
+    max-width: 370px;
+    margin-bottom: 40px;
+
+    @include d(767) {
+      margin-bottom: 20px;
+    }
+
+    &::before {
+      content: "0"counter(counter);
+      position: absolute;
+      top: 50%;
+      transform: translate(0, -50%);
+      left: 0;
+      font-size: 24px;
+      font-weight: 900;
+      -webkit-text-stroke: 1px $titleColor;
+      color: transparent;
+    }
+  }
+}
+
+.facts {
+  padding: 100px 0;
+
+  @include d(1199) {
+    padding: 80px 0;
+  }
+
+  @include d(991) {
+    padding: 60px 0;
+  }
+
+  &__title {
+    margin-bottom: 80px;
+
+    @include d(991) {
+      margin-bottom: 60px;
+    }
+  }
+
+  &-row {
+    display: flex;
+    flex-wrap: wrap;
+    padding-bottom: 60px;
+    border-bottom: 1px solid $grey1;
+
+    @include d(1199) {
+      padding-bottom: 20px;
+    }
+  }
+
+  &__item {
+    max-width: 50%;
+    flex: 0 0 50%;
+    padding-left: 40px;
+    margin-bottom: 60px;
+
+    @include d(767) {
+      max-width: 100%;
+      flex: 0 0 100%;
+      margin-bottom: 40px;
+
+      .title-4 {
+        font-size: 18px;
+      }
+    }
+  }
+}
+
+.learn {
+  padding-bottom: 100px;
+  margin-bottom: 100px;
+  border-bottom: 1px solid $grey1;
+
+  @include d(1199) {
+    padding-bottom: 80px;
+    margin-bottom: 80px;
+  }
+
+  @include d(991) {
+    padding-bottom: 60px;
+    margin-bottom: 60px;
+  }
+
+  &-article {
+    max-width: 540px;
+    margin-right: auto;
+    margin-left: 0;
+
+    @include d(991) {
+      max-width: 100%;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 20px;
+
+      &:not(:last-of-type) {
+        margin-bottom: 15px;
+      }
+    }
+
+    strong {
+      color: $titleColor;
+      font-size: 18px;
+    }
+
+    span {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    a {
+      color: $titleColor;
+    }
+  }
+}
+
+.knowledge-article {
+  margin-bottom: 40px;
+}
+
+.article {
+  overflow: hidden;
+  max-width: 990px;
+  margin: 60px auto;
+
+  @include d (991) {
+    margin: 40px 0;
+  }
+
+  @include d(767) {
+    margin: 20px 0;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: $titleColor;
+    margin-bottom: 20px;
+  }
+
+  ul {
+    margin: 20px 0;
+
+    li {
+      position: relative;
+      padding-left: 15px;
+
+      &::before {
+        content: " ";
+        width: 3px;
+        height: 3px;
+        border-radius: 50%;
+        background-color: $black;
+        position: absolute;
+        top: 10px;
+        left: 5px;
+      }
+    }
+  }
+
+  p {
+    font-size: 14px;
+    line-height: 22px;
+
+    &:not(:last-of-type) {
+      margin-bottom: 15px;
+    }
+  }
+
+  img {
+    margin-bottom: 40px;
+  }
+
+  figure {
+    margin: 40px 30px 40px 0;
+    float: left;
+
+    @include d(767) {
+      float: none;
+
+    }
+  }
+
+  figcaption {
+    font-size: 14px;
+    color: $grey;
+  }
+
+  strong {
+    color: $titleColor;
+    font-size: 18px;
+  }
+
+  span {
+    font-weight: bold;
+    font-size: 18px;
+  }
+
+  a {
+    color: $titleColor;
+  }
+
+  &-banner {
+    figcaption {
+      font-size: 14px;
+      line-height: 20px;
+      color: $grey;
+    }
+
+    img {
+      max-height: 488px;
+      margin: 20px 0;
+    }
+  }
+}
+
+.knowledge__related {
+  @include d (767) {
+    .align-items-center {
+      @include d(767) {
+        margin-bottom: 30px;
+      }
+    }
+
+    .section__title {
+      margin-bottom: 0;
+
+      p {
+        display: none;
+      }
+    }
+  }
+}
