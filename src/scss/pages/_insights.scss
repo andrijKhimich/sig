@@ -1,0 +1,69 @@
+.insights {
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .knowledge-card {
+      @include d(991) {
+        max-width: 32%;
+      }
+      @include d(767) {
+        max-width: 49%;
+      }
+      @include d(575) {
+        max-width: 100%;
+        margin: 0 auto 40px auto;
+      }
+    }
+    .knowledge-card:not(:first-child) {
+      display: block;
+    }
+    &_top {
+      margin: 0 -15px;
+      flex-wrap: wrap;
+      @include d(991) {
+        display: flex;
+
+        .knowledge-card:not(:first-child) {
+          display: block;
+        }
+      }
+      @include d(767) {
+        display: none;
+      }
+
+      @include d(575) {
+        margin-right: 0;
+      }
+
+      .knowledge-slider__item:first-child {
+        flex: 0 0 660px;
+
+        @include d(991) {
+          flex: 0 0 60%;
+          max-width: 60%;
+        }
+
+        @include d(767) {
+          flex: 0 0 100%;
+          margin-bottom: 40px;
+          max-width: 100%;
+        }
+      }
+
+      .knowledge-slider__item:last-child {
+        flex: 0 0 100%;
+
+        @include d(991) {
+          flex: 0 0 40%;
+          max-width: 40%;
+        }
+
+        @include d(767) {
+          max-width: 100%;
+          flex: 0 0 100%;
+        }
+      }
+    }
+  }
+}

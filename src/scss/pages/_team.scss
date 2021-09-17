@@ -104,6 +104,12 @@
   }
 }
 
+.card__team {
+  &::before {
+    display: none;
+  }
+}
+
 .related {
   padding-bottom: 140px;
 
