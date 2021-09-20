@@ -311,6 +311,65 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+
+  &_lg {
+    .card__project {
+      @include d(767) {}
+
+      &:first-of-type {
+        flex: 0 0 100%;
+        max-width: 100%;
+        min-height: 480px;
+        overflow: hidden;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          width: 100%;
+          top: 0;
+          left: 0;
+          bottom: 0;
+          right: 0;
+          background: linear-gradient(180deg, rgba(38, 38, 38, 0) 42.64%, #262626 100%);
+          z-index: 1;
+        }
+
+        img {
+          object-fit: cover;
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+        }
+
+        .card__content {
+          position: absolute;
+          bottom: 50px;
+          left: 40px;
+          color: $white;
+          z-index: 2;
+
+          @include d(767) {
+            bottom: 20px;
+            left: 20px;
+          }
+
+          p {
+            max-width: 220px;
+            padding-right: 0;
+          }
+
+          .title-4,
+          h4 {
+            &::before {
+              display: none;
+            }
+          }
+        }
+      }
+    }
+  }
 }
 
 .projects-btns {
@@ -320,6 +379,7 @@
 
 .card__project {
   display: block;
+
   &:hover {
 
     & .title-4,
@@ -356,6 +416,287 @@
       background-repeat: no-repeat;
       background-position: center;
       transition: opacity $hover-duration $timing;
+    }
+  }
+}
+
+.projects {
+  &-accordion {
+    max-width: 260px;
+
+    @include d(991) {
+      display: flex;
+      max-width: 100%;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    &__item {
+      font-size: 16px;
+      font-weight: 500;
+      position: relative;
+      margin-bottom: 20px;
+      cursor: pointer;
+      transition: color $hover-duration $timing;
+
+      @include d(767) {
+        pointer-events: none;
+      }
+
+      &>a {
+        position: relative;
+        padding-left: 15px;
+
+        @include d(767) {
+          padding-left: 0;
+          padding-right: 20px;
+          margin-bottom: 10px;
+        }
+      }
+
+      &.slick-current {
+        pointer-events: initial;
+
+        &>a {
+          color: $black;
+
+          &::after {
+            background-image: url(../img/svg/arrow-down.svg);
+          }
+        }
+
+      }
+
+      @include d(1199) {
+        font-size: 16px;
+      }
+
+      @include d(991) {
+        font-size: 14px;
+        flex: 0 0 25%;
+        padding-left: 0;
+        padding-right: 10px;
+      }
+
+      @include d(767) {
+        padding-right: 20px;
+        flex: 0 0 auto;
+        color: $grey;
+        font-weight: 400;
+      }
+
+      &:not(:last-child) {
+        @include d(991) {
+          border-right: 1px solid $grey1;
+          margin-right: 10px;
+        }
+
+        @include d(767) {
+          border-right: none;
+          margin-right: 0;
+        }
+      }
+
+
+      &_icon {
+        &>a {
+
+          &::before,
+          &::after {
+            content: "";
+            position: absolute;
+            background-color: $black;
+
+            @include d(991) {
+              display: none;
+            }
+          }
+
+          &::before {
+            width: 8px;
+            height: 1px;
+            top: 10px;
+            left: 0;
+            transition: background-color $hover-duration $timing;
+          }
+
+          &::after {
+            width: 1px;
+            height: 8px;
+            top: 7px;
+            left: 3px;
+            transform: rotate(0);
+            transition: transform $hover-duration $timing, background-color $hover-duration $timing;
+
+            @include d(767) {
+              display: block;
+              width: 12px;
+              background-image: url(../img/svg/arrow-down-grey.svg);
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+              background-color: transparent;
+              top: 6px;
+              left: auto;
+              right: 0;
+            }
+          }
+
+          &.active {
+            font-weight: 600;
+
+            // a {
+            &::after {
+              transform: rotate(90deg);
+              background-color: $titleColor;
+
+              @include d(767) {
+                background-color: transparent;
+                transform: rotate(180deg);
+              }
+            }
+
+            &::before {
+              background-color: $titleColor;
+            }
+
+            // }
+          }
+        }
+
+
+        &_inner {
+          &>a {
+
+            &::before,
+            &::after {
+              content: "";
+              position: absolute;
+              background-color: $black;
+
+              @include d(991) {
+                display: none;
+              }
+            }
+
+            &::before {
+              width: 8px;
+              height: 1px;
+              top: 10px;
+              left: 15px;
+              transition: background-color $hover-duration $timing;
+            }
+
+            &::after {
+              width: 1px;
+              height: 8px;
+              top: 7px;
+              left: 19px;
+              transform: rotate(0);
+              transition: transform $hover-duration $timing, background-color $hover-duration $timing;
+
+              @include d(767) {
+                display: block;
+                width: 12px;
+                background-image: url(../img/svg/arrow-down-grey.svg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center;
+                background-color: transparent;
+                top: 6px;
+                left: auto;
+                right: 0;
+              }
+            }
+
+            &.active {
+              font-weight: 600;
+
+              &::after {
+                transform: rotate(90deg);
+                background-color: $titleColor;
+
+                @include d(767) {
+                  background-color: transparent;
+                  transform: rotate(180deg);
+                }
+              }
+
+              &::before {
+                background-color: $titleColor;
+              }
+            }
+          }
+
+
+        }
+      }
+    }
+
+    &__sublist {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height $hover-duration $timing;
+
+      @include d(991) {
+        max-height: 100%;
+        overflow: visible;
+        margin-top: 15px;
+      }
+
+      @include d(767) {
+        max-height: 0;
+        overflow: hidden;
+        margin-top: 0;
+
+      }
+    }
+
+    &__subitem {
+      font-size: 16px;
+      font-weight: 400;
+      padding-left: 30px;
+      position: relative;
+      color: $black;
+      margin-bottom: 10px;
+
+      @include d(991) {
+        font-size: 14px;
+      }
+
+      // &:hover a {
+      //   color: $primary;
+      //   text-decoration: underline;
+      // }
+
+      ul {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height $hover-duration $timing;
+
+        li {
+          padding-left: 10px;
+          position: relative;
+
+          &::before {
+            content: "";
+            width: 2px;
+            height: 2px;
+            background-color: $black;
+            border-radius: 50%;
+            position: absolute;
+            top: 10px;
+            left: 0;
+          }
+
+          &>a {
+            &:hover {
+              color: $primary;
+              text-decoration: underline;
+            }
+          }
+        }
+      }
     }
   }
 }

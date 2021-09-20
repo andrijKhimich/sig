@@ -566,6 +566,7 @@ textarea {
   display: flex;
   align-items: center;
   padding: 0 15px;
+
   & .article-description {
     margin-bottom: 0;
   }
@@ -573,6 +574,7 @@ textarea {
   &-list {
     display: flex;
     margin-left: 15px;
+
     li {
       &:not(:last-child) {
         margin-right: 15px;
@@ -678,12 +680,13 @@ textarea {
 }
 
 .card {
-  max-width: 316px;
+  max-width: 32%;
   margin-bottom: 40px;
-
+  overflow: hidden;
   @include d(767) {
     margin: 0 auto 20px auto;
     position: relative;
+    max-width: 49%;
 
     &::before {
       content: "";
@@ -694,6 +697,12 @@ textarea {
       top: 0;
       left: 0;
     }
+  }
+
+  @include d(575) {
+    max-width: 100%;
+    flex: 0 0 100%;
+    max-height: 480px;
   }
 
   img {

@@ -75,8 +75,8 @@
       height: 90vh;
     }
 
-    & > li {
-      & > a {
+    &>li {
+      &>a {
         padding: 10px 68px 34px 0;
 
         @include d(991) {
@@ -88,13 +88,15 @@
 
   &-item_icon {
     position: relative;
+
     &.active {
-      & > a {
+      &>a {
         &::before {
           transform: rotate(180deg);
         }
       }
     }
+
     &:hover {
       @include rh(991) {
         .sub-menu {
@@ -103,7 +105,7 @@
           pointer-events: initial;
         }
 
-        & > a {
+        &>a {
           &:before {
             transform: rotate(180deg);
           }
@@ -111,7 +113,7 @@
       }
     }
 
-    & > a {
+    &>a {
       position: relative;
 
       &::before {
@@ -141,11 +143,12 @@
 
 .sub-menu {
   padding: 20px 40px 20px 20px;
-  background-color: $white;
-  color: $textColor;
+  background-color: $primary;
+  color: $white;
   position: absolute;
   top: 100%;
-  left: 20%;
+  // right: 0;
+  left: 0;
   transform: translate(0, 10px);
   opacity: 0;
   pointer-events: none;
@@ -157,18 +160,15 @@
     transform: translate(0, 0);
     padding: 0 0 0 30px;
     color: $primary;
+    background-color: $white;
     opacity: 1;
     max-height: 0;
     overflow: hidden;
   }
 
-  & > li {
+  &>li {
     a {
       white-space: nowrap;
-    }
-
-    &:hover {
-      color: $primary;
     }
   }
 }
@@ -306,6 +306,79 @@
 
     &:last-child {
       bottom: 0;
+    }
+  }
+}
+
+.menu-item_lg {
+  position: static;
+
+  .sub-menu {
+    display: flex;
+    flex-wrap: nowrap;
+    padding: 50px 80px;
+    right: 0;
+    left: auto;
+
+    @include d(1199) {
+      padding: 20px 30px;
+    }
+
+    @include d(1024) {
+      padding: 15px;
+    }
+
+    @include d(991) {
+      padding: 0 0 0 30px;
+      flex-wrap: wrap;
+      max-width: 100%;
+      a {
+        flex-wrap: wrap;
+        white-space: inherit;
+      }
+    }
+
+    &>li {
+
+      &>a {
+        font-weight: bold;
+        padding-bottom: 15px;
+        border-bottom: 1px solid $white;
+        margin-bottom: 15px;
+
+        @include d(1199) {
+          margin-bottom: 5px;
+          padding-bottom: 5px;
+        }
+      }
+
+      &:not(:last-child) {
+        margin-right: 25px;
+      }
+
+      &>ul {
+        &>li {
+          margin-bottom: 4px;
+
+          a {
+            padding-left: 30px;
+            position: relative;
+
+            &::before {
+              content: "";
+              width: 20px;
+              height: 20px;
+              position: absolute;
+              top: 3px;
+              left: 0;
+              background-image: url(../img/svg/arrow-up-right.svg);
+              background-size: cover;
+              background-repeat: no-repeat;
+              background-position: center;
+            }
+          }
+        }
+      }
     }
   }
 }

@@ -51,6 +51,22 @@ const detectSubList = () => {
 	});
 };
 
+const detectProjectSublist = () => {
+	const sublist = document.querySelectorAll(".projects-accordion__sublist");
+	sublist.forEach(function (item) {
+		item.parentElement.classList.add("projects-accordion__item_icon");
+	});
+};
+
+const detectProjectSublistInner = () => {
+	const sublist = document.querySelectorAll(".projects-accordion__subitem ul");
+	sublist.forEach(function (item) {
+		item.parentElement.classList.add("projects-accordion__item_icon_inner");
+	});
+};
+
+detectProjectSublistInner();
+detectProjectSublist();
 detectSubList();
 detectSubMenu();
 
@@ -69,7 +85,7 @@ const toggleHeaderForm = () => {
 };
 
 const burger = document.querySelector(".js-burger");
-const submenu = document.querySelector(".js-sub-menu");
+const submenu = document.querySelector(".sub-menu");
 
 const openMenu = () => {
 	if (windowWidth < 991) {
@@ -107,8 +123,6 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		});
 	}
-	// if (windowWidth >= 991 && windowWidth <= 767) {
-	console.log("hello")
 	let accordionItem = document.querySelectorAll(".js-accordion-item");
 	for (let i = 0; i < accordionItem.length; i++) {
 		accordionItem[i].addEventListener("click", function () {
@@ -121,7 +135,45 @@ document.addEventListener("DOMContentLoaded", function () {
 			}
 		});
 	}
-	// }
+
+	let accordionProjectsItem = document.querySelectorAll(".projects-accordion__item_icon > a");
+	for (let i = 0; i < accordionProjectsItem.length; i++) {
+		accordionProjectsItem[i].addEventListener("click", function (e) {
+			e.preventDefault();
+			this.classList.toggle("active");
+			let accordionProjectsSublist = this.parentElement.querySelector('.projects-accordion__sublist');
+			console.log(this);
+			if (accordionProjectsSublist.style.maxHeight) {
+				accordionProjectsSublist.style.maxHeight = null;
+			} else {
+				accordionProjectsSublist.style.maxHeight = accordionProjectsSublist.scrollHeight + "px";
+			}
+		});
+	}
+
+	let accordionProjectsItemInner = document.querySelectorAll(".projects-accordion__item_icon_inner > a");
+	for (let i = 0; i < accordionProjectsItemInner.length; i++) {
+		accordionProjectsItemInner[i].addEventListener("click", function (e) {
+			this.classList.toggle("active");
+			let accordionProjectsSublistInner = this.parentElement.querySelector('.projects-accordion__subitem ul');
+			console.log(this);
+			if (accordionProjectsSublistInner.style.maxHeight) {
+				accordionProjectsSublistInner.style.maxHeight = null;
+			} else {
+				accordionProjectsSublistInner.style.maxHeight = accordionProjectsSublistInner.scrollHeight + "px";
+				let parentSubmenu = accordionProjectsSublistInner.parentNode.parentNode;
+				parentSubmenu.style.maxHeight = 100 + '%';
+			}
+			// if (this.classList.contains("active")) {
+			// 	console.log(parentSubmenu);
+			// 	setTimeout(function () {
+			// 	}, 100);
+			// } else {
+			// 	// parentSubmenu.style.maxHeight = null;
+			// }
+		});
+	}
+
 
 
 	burger.addEventListener("click", function () {

@@ -1,0 +1,15 @@
+.news {
+  &-card {
+    max-width: 850px;
+    padding: 40px 0;
+    border-bottom: 1px solid $grey1;
+    .title-4,
+    h4 {
+      padding: 14px 0;
+    }
+
+    .btn {
+      margin-top: 20px;
+    }
+  }
+}
