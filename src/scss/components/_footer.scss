@@ -7,15 +7,18 @@
   @include d(1199) {
     padding: 80px 0 30px 0;
   }
+
   @include d(767) {
     padding: 60px 0 0 0;
   }
 
   &__logo {
     margin-bottom: 70px;
+
     @include d(991) {
       padding-left: 0;
     }
+
     @include d(767) {
       margin-bottom: 40px;
     }
@@ -131,19 +134,13 @@
         margin-top: 0;
       }
     }
+  }
 
-    &:nth-child(2),
-    &:nth-child(3),
-    &:nth-child(4) {
-      ul {
-        li:first-child {
-          text-transform: uppercase;
-          font-weight: 700;
-          font-size: 12px;
-          margin-bottom: 12px;
-        }
-      }
-    }
+  &-list__subtitle {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 12px;
+    margin-bottom: 12px;
   }
 
   &-form {
