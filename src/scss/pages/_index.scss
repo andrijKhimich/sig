@@ -340,7 +340,7 @@
       max-width: 100%;
     }
 
-    &:nth-child(3) {
+    &:first-child {
       grid-column-start: 3;
       grid-row-start: 1;
       grid-row-end: 3;
