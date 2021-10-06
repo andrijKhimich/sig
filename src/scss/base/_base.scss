@@ -366,13 +366,13 @@ textarea {
 
   span {
     position: relative;
-    margin-right: 15px;
+    margin-right: 11px;
 
     &::before {
       content: "";
       width: 0;
       height: 1px;
-      background-color: white;
+      background-color: #fff;
       position: absolute;
       bottom: 0;
       left: 0;
@@ -498,6 +498,7 @@ textarea {
   left: 0;
   width: 100%;
   height: 100%;
+  z-index: -1;
 
   &.active {
     svg {
@@ -669,7 +670,7 @@ textarea {
 .submit-btn {
   display: inline-block;
   color: $white;
-  background-color: $black;
+  background-color: $textColor;
   border-radius: 10px;
   height: 40px;
   line-height: 40px;
@@ -683,6 +684,7 @@ textarea {
   max-width: 32%;
   margin-bottom: 40px;
   overflow: hidden;
+
   @include d(767) {
     margin: 0 auto 20px auto;
     position: relative;

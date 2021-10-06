@@ -76,12 +76,12 @@ const headerFormInput = document.querySelector(".js-header-form input");
 const menu = document.querySelector(".js-menu");
 
 const toggleHeaderForm = () => {
-	if (windowWidth > 991) {
+	// if (windowWidth > 991) {
 		headerForm.classList.toggle("active");
 		toggleFormBtn.classList.toggle("active");
 		menu.classList.toggle("hidden");
 		headerFormInput.value = "";
-	}
+	// }
 };
 
 const burger = document.querySelector(".js-burger");

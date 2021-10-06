@@ -105,6 +105,7 @@
 }
 
 .card__team {
+  max-width: 100%;
   &::before {
     display: none;
   }

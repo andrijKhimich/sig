@@ -17,6 +17,24 @@
     display: flex;
     justify-content: space-between;
   }
+
+  &::before {
+    content: "";
+    width: 1px;
+    height: 100%;
+    background-color: rgba(255, 255, 255, .2);
+    position: absolute;
+    top: 0;
+    left: 24.5%;
+
+    @include m(1920) {
+      left: 34%;
+    }
+
+    @include d(991) {
+      display: none;
+    }
+  }
 }
 
 .logo {
@@ -50,6 +68,9 @@
     pointer-events: none;
     left: -100px;
     transition: opacity $hover-duration $timing, left $hover-duration $timing;
+    @include d(575) {
+      width: 60vw;
+    }
   }
 
   &.active {
@@ -118,23 +139,21 @@
 
       &::before {
         content: "";
-        width: 8px;
-        height: 8px;
+        width: 6px;
+        height: 6px;
         background-image: url(../img/svg/triangle-down.svg);
         background-size: cover;
         background-repeat: no-repeat;
         background-position: center;
         position: absolute;
         top: 20px;
-        right: 50px;
+        right: 54px;
         transition: transform $hover-duration $timing;
 
         @include d(991) {
           right: 0;
           background-image: url(../img/svg/triangle-down-black.svg);
           top: 18px;
-          width: 6px;
-          height: 6px;
         }
       }
     }
@@ -175,28 +194,46 @@
 
 .search-form {
   position: absolute;
-  top: 20%;
+  top: 19%;
   right: 0;
-  width: 560px;
+  width: 706px;
   height: 20px;
 
   @include d(991) {
-    display: none;
+    top: -2px;
+    right: 45px;
+    max-width: 40%;
   }
 
   .btn-search {
     position: absolute;
-    top: 50%;
-    right: 0;
+    top: 80%;
+    right: -4px;
     transform: translate(-50%, -50%);
+
+    @include d(991) {
+      background-image: url(../img/svg/search-black.svg);
+    }
 
     &.active {
       background-image: url(../img/svg/close.svg);
+      width: 30px;
+      height: 30px;
+
+      @include d(991) {
+        width: 20px;
+        height: 20px;
+        background-image: url(../img/svg/close-black.svg);
+      }
     }
 
     &_submit {
       left: 0;
       top: 10px;
+      @include d(991) {
+        width: 18px;
+        height: 18px;
+      }
     }
   }
 
@@ -207,10 +244,19 @@
     width: 100%;
     opacity: 0;
     pointer-events: none;
-
+    @include d(991) {
+      top: 7px;
+    }
     &.active {
       opacity: 1;
       pointer-events: initial;
+      padding-bottom: 25px;
+      border-bottom: 1px solid #D7D7D7;
+
+      @include d(991) {
+        padding-bottom: 5px;
+        border-bottom: 1px solid $black;
+      }
     }
 
     label {
@@ -219,32 +265,57 @@
 
     input {
       width: 100%;
-      padding-left: 40px;
+      padding-left: 19px;
       background-color: transparent;
       color: $white;
+
+      @include d(991) {
+        font-size: 14px;
+        color: $black;
+      }
 
       &::-webkit-input-placeholder {
         font-family: inherit;
         font-size: 16px;
         color: $white;
+
+        @include d(991) {
+          font-size: 14px;
+          color: $black;
+        }
       }
 
       &::-moz-placeholder {
         font-family: inherit;
         font-size: 16px;
         color: $white;
+
+        @include d(991) {
+          font-size: 14px;
+          color: $black;
+        }
       }
 
       &:-ms-input-placeholder {
         font-family: inherit;
         font-size: 16px;
         color: $white;
+
+        @include d(991) {
+          font-size: 14px;
+          color: $black;
+        }
       }
 
       &::placeholder {
         font-family: inherit;
         font-size: 16px;
         color: $white;
+
+        @include d(991) {
+          font-size: 14px;
+          color: $black;
+        }
       }
     }
   }
@@ -332,6 +403,7 @@
       padding: 0 0 0 30px;
       flex-wrap: wrap;
       max-width: 100%;
+
       a {
         flex-wrap: wrap;
         white-space: inherit;

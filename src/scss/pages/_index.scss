@@ -6,12 +6,14 @@
     height: auto;
 
   }
+
   &-video {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+
     video {
       position: absolute;
       top: 0;
@@ -24,6 +26,7 @@
       object-position: center;
     }
   }
+
   &-banner {
     background-size: cover;
     background-repeat: no-repeat;
@@ -62,7 +65,7 @@
     z-index: 1;
     bottom: 85px;
     left: 120px;
-    max-width: 640px;
+    max-width: 564px;
     font-size: 18px;
 
     @include d(1199) {
@@ -75,6 +78,7 @@
       position: static;
       color: $black;
       padding-left: 15px;
+
       .read-more_circle {
         border-color: $black;
 
@@ -87,6 +91,7 @@
     p {
       font-weight: 700;
       margin-bottom: 20px;
+
       @include d(991) {
         margin-bottom: 50px;
       }
@@ -100,7 +105,7 @@
     color: $white;
     padding-bottom: 6px;
     margin-bottom: 10px;
-    border-bottom: 2px solid $white;
+    border-bottom: 1px solid $white;
 
     @include d(1199) {
       font-size: 56px;
@@ -146,6 +151,7 @@
     p {
       font-size: 14px;
       line-height: 1.429em;
+      font-weight: 500;
     }
 
     .title-2,
@@ -387,10 +393,10 @@
 }
 
 .knowledge {
-  padding: 170px 0 20px 0;
+  padding: 170px 0 0 0;
 
   @include d(1199) {
-    padding: 100px 0 20px 0;
+    padding: 100px 0 0 0;
   }
 
   @include d(991) {
@@ -457,6 +463,12 @@
     @include d(991) {
       flex: 0 0 100%;
     }
+
+    p {
+      font-weight: 500;
+      font-size: 14px;
+      max-width: 580px;
+    }
   }
 
   &__content {
@@ -517,6 +529,7 @@
       p {
         font-size: 14px;
         margin-bottom: 5px;
+        font-weight: 500;
       }
 
       a {
@@ -656,7 +669,7 @@
         position: absolute;
         left: 0;
         bottom: -20%;
-        z-index: 1;
+        z-index: 2;
         pointer-events: none;
 
         @include d(1440) {
@@ -679,8 +692,12 @@
         position: absolute;
         bottom: 0;
         left: 0;
-        z-index: 1;
+        z-index: 2;
         pointer-events: none;
+
+        @include m(1920) {
+          bottom: -5%;
+        }
       }
     }
   }
@@ -722,8 +739,9 @@
       margin-bottom: 18px;
     }
 
-    p {
+    p, a {
       line-height: 1.429em;
+      font-weight: 500;
     }
 
     &__box {
@@ -820,7 +838,7 @@
   padding: 93px 60px 97px 120px;
   color: $black;
   max-width: 540px;
-  bottom: 428px;
+  bottom: 438px;
   left: 8%;
   z-index: 1;
 
@@ -834,6 +852,11 @@
       left: 0;
       bottom: 0;
     }
+  }
+
+  @include m(1920) {
+    max-width: 50%;
+    left: 13%;
   }
 
   .title-2,
@@ -874,6 +897,7 @@
       font-size: 14px;
       line-height: 20px;
       width: 100%;
+      font-weight: 500;
     }
   }
 
@@ -888,7 +912,36 @@
     padding: 10px 20px;
     border: 1px solid $black;
     border-radius: 10px;
+    font-size: 14px;
     color: $black;
     background-color: transparent;
+
+    &::-webkit-input-placeholder {
+      font-family: inherit;
+      font-size: 14px;
+      color: $black;
+      font-weight: 500;
+    }
+
+    &::-moz-placeholder {
+      font-family: inherit;
+      font-size: 14px;
+      color: $black;
+      font-weight: 500;
+    }
+
+    &:-ms-input-placeholder {
+      font-family: inherit;
+      font-size: 14px;
+      color: $black;
+      font-weight: 500;
+    }
+
+    &::placeholder {
+      font-family: inherit;
+      font-size: 14px;
+      color: $black;
+      font-weight: 500;
+    }
   }
 }
