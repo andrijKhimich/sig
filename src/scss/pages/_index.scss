@@ -82,8 +82,16 @@
       .read-more_circle {
         border-color: $black;
 
+        @include d(575) {
+          border-color: $titleColor;
+        }
+
         .svg-icon_md {
           stroke: $black;
+
+          @include d(575) {
+            stroke: $titleColor;
+          }
         }
       }
     }
@@ -94,6 +102,16 @@
 
       @include d(991) {
         margin-bottom: 50px;
+      }
+    }
+
+    .read-more {
+      @include d(575) {
+        position: relative;
+        left: 50%;
+        transform: translate(-50%, 0);
+        color: $titleColor;
+        text-decoration: underline;
       }
     }
   }
@@ -204,6 +222,11 @@
         bottom: -25px;
         left: 0;
         pointer-events: initial;
+        @include d(575) {
+          right: 0;
+          left: auto;
+          bottom: 0;
+        }
       }
 
       .expertise-card__title {
@@ -739,7 +762,8 @@
       margin-bottom: 18px;
     }
 
-    p, a {
+    p,
+    a {
       line-height: 1.429em;
       font-weight: 500;
     }

@@ -45,6 +45,10 @@
   @include d(991) {
     padding-left: 15px;
   }
+  @include d(767) {
+    padding-left: 0;
+    max-width: 80px;
+  }
 }
 
 .menu {
@@ -69,7 +73,7 @@
     left: -100px;
     transition: opacity $hover-duration $timing, left $hover-duration $timing;
     @include d(575) {
-      width: 60vw;
+      width: 100vw;
     }
   }
 
