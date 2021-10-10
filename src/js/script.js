@@ -74,36 +74,37 @@ const toggleFormBtn = document.querySelector(".js-toggle-form");
 const headerForm = document.querySelector(".js-header-form");
 const headerFormInput = document.querySelector(".js-header-form input");
 const menu = document.querySelector(".js-menu");
+const burger = document.querySelector(".js-burger");
 
 const toggleHeaderForm = () => {
 	// if (windowWidth > 991) {
-		headerForm.classList.toggle("active");
-		toggleFormBtn.classList.toggle("active");
-		menu.classList.toggle("hidden");
-		headerFormInput.value = "";
+	headerForm.classList.toggle("active");
+	toggleFormBtn.classList.toggle("active");
+	menu.classList.toggle("hidden");
+	headerFormInput.value = "";
+	burger.classList.toggle("hidden");
 	// }
 };
 
-const burger = document.querySelector(".js-burger");
 const submenu = document.querySelector(".sub-menu");
 
 const openMenu = () => {
-	if (windowWidth < 991) {
-		burger.classList.add("active");
-		menu.classList.add("active");
-	}
+	// if (windowWidth < 991) {
+	burger.classList.add("active");
+	menu.classList.add("active");
+	// }
 };
 
 const closeMenu = () => {
-	if (windowWidth < 991) {
-		burger.classList.remove("active");
-		menu.classList.remove("active");
+	// if (windowWidth < 991) {
+	burger.classList.remove("active");
+	menu.classList.remove("active");
 
-		const subMenu = document.querySelectorAll(".sub-menu");
-		for (let i = 0; i < subMenu.length; i++) {
-			subMenu[i].style.maxHeight = null;
-		}
+	const subMenu = document.querySelectorAll(".sub-menu");
+	for (let i = 0; i < subMenu.length; i++) {
+		subMenu[i].style.maxHeight = null;
 	}
+	// }
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -125,9 +126,12 @@ document.addEventListener("DOMContentLoaded", function () {
 	}
 	let accordionItem = document.querySelectorAll(".js-accordion-item");
 	for (let i = 0; i < accordionItem.length; i++) {
-		accordionItem[i].addEventListener("click", function () {
+		accordionItem[i].addEventListener("click", function (e) {
+			e.preventDefault();
 			this.classList.toggle("active");
-			let accordionSublist = this.querySelector('.expertise-accordion__sublist');
+			let accordionSublist = this.querySelector(
+				".expertise-accordion__sublist"
+			);
 			if (accordionSublist.style.maxHeight) {
 				accordionSublist.style.maxHeight = null;
 			} else {
@@ -136,33 +140,43 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	}
 
-	let accordionProjectsItem = document.querySelectorAll(".projects-accordion__item_icon > a");
+	let accordionProjectsItem = document.querySelectorAll(
+		".projects-accordion__item_icon > a"
+	);
 	for (let i = 0; i < accordionProjectsItem.length; i++) {
 		accordionProjectsItem[i].addEventListener("click", function (e) {
 			e.preventDefault();
 			this.classList.toggle("active");
-			let accordionProjectsSublist = this.parentElement.querySelector('.projects-accordion__sublist');
+			let accordionProjectsSublist = this.parentElement.querySelector(
+				".projects-accordion__sublist"
+			);
 			console.log(this);
 			if (accordionProjectsSublist.style.maxHeight) {
 				accordionProjectsSublist.style.maxHeight = null;
 			} else {
-				accordionProjectsSublist.style.maxHeight = accordionProjectsSublist.scrollHeight + "px";
+				accordionProjectsSublist.style.maxHeight =
+					accordionProjectsSublist.scrollHeight + "px";
 			}
 		});
 	}
 
-	let accordionProjectsItemInner = document.querySelectorAll(".projects-accordion__item_icon_inner > a");
+	let accordionProjectsItemInner = document.querySelectorAll(
+		".projects-accordion__item_icon_inner > a"
+	);
 	for (let i = 0; i < accordionProjectsItemInner.length; i++) {
 		accordionProjectsItemInner[i].addEventListener("click", function (e) {
 			this.classList.toggle("active");
-			let accordionProjectsSublistInner = this.parentElement.querySelector('.projects-accordion__subitem ul');
+			let accordionProjectsSublistInner = this.parentElement.querySelector(
+				".projects-accordion__subitem ul"
+			);
 			console.log(this);
 			if (accordionProjectsSublistInner.style.maxHeight) {
 				accordionProjectsSublistInner.style.maxHeight = null;
 			} else {
-				accordionProjectsSublistInner.style.maxHeight = accordionProjectsSublistInner.scrollHeight + "px";
+				accordionProjectsSublistInner.style.maxHeight =
+					accordionProjectsSublistInner.scrollHeight + "px";
 				let parentSubmenu = accordionProjectsSublistInner.parentNode.parentNode;
-				parentSubmenu.style.maxHeight = 100 + '%';
+				parentSubmenu.style.maxHeight = 100 + "%";
 			}
 			// if (this.classList.contains("active")) {
 			// 	console.log(parentSubmenu);
@@ -174,8 +188,6 @@ document.addEventListener("DOMContentLoaded", function () {
 		});
 	}
 
-
-
 	burger.addEventListener("click", function () {
 		if (this.classList.contains("active")) {
 			closeMenu();
@@ -186,12 +198,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 	initKnowledgeSlider();
 	initExpertiseMenu();
+	initExpertiseMenuBottom();
 	window.addEventListener("resize", function () {
 		if (windowWidth < 991) {
 			initKnowledgeSlider();
 		}
 		if (windowWidth < 767) {
 			initExpertiseMenu();
+			initExpertiseMenuBottom()
 		}
 	});
 });
@@ -208,6 +222,7 @@ function initKnowledgeSlider() {
 			arrows: false,
 			infinite: true,
 			mobileFirst: true,
+			// infinite: true,
 			responsive: [{
 					breakpoint: 991,
 					settings: "unslick",
@@ -219,7 +234,7 @@ function initKnowledgeSlider() {
 					},
 				},
 				{
-					breakpoint: 320,
+					breakpoint: 280,
 					settings: {
 						slidesToShow: 1,
 					},
@@ -230,18 +245,16 @@ function initKnowledgeSlider() {
 }
 
 function initExpertiseMenu() {
-	const knowledgeSlider = document.querySelector(
-		"#expertiseMenu.slick-slider"
-	);
+	const knowledgeSlider = document.querySelector("#expertiseMenu.slick-slider");
 	if ($(window).width() < 767 && !knowledgeSlider) {
 		$("#expertiseMenu").slick({
 			slidesToShow: 2,
 			slidesToScroll: 1,
 			dots: false,
 			arrows: false,
-			infinite: false,
 			mobileFirst: true,
 			adaptiveHeight: true,
+			infinite: true,
 			responsive: [{
 					breakpoint: 768,
 					settings: "unslick",
@@ -263,7 +276,37 @@ function initExpertiseMenu() {
 	}
 }
 
-
+function initExpertiseMenuBottom() {
+	const expertiseSlider = document.querySelector("#expertiseMenuBottom.slick-slider");
+	if ($(window).width() < 767 && !expertiseSlider) {
+		$("#expertiseMenuBottom").slick({
+			slidesToShow: 2,
+			slidesToScroll: 1,
+			dots: false,
+			arrows: false,
+			mobileFirst: true,
+			adaptiveHeight: true,
+			infinite: true,
+			responsive: [{
+					breakpoint: 768,
+					settings: "unslick",
+				},
+				{
+					breakpoint: 575,
+					settings: {
+						slidesToShow: 3,
+					},
+				},
+				{
+					breakpoint: 320,
+					settings: {
+						slidesToShow: 2,
+					},
+				},
+			],
+		});
+	}
+}
 
 $(document).ready(function () {
 	// if ($('.inner-page').length > 0) {

@@ -9,20 +9,24 @@
   border-bottom: 1px solid rgba($white, 0.4);
 
   @include d(991) {
+    padding: 15px 0;
+  }
+
+  @include d(767) {
     border-bottom: none;
-    padding: 15px 0 0 0;
   }
 
   &-row {
     display: flex;
     justify-content: space-between;
+    position: relative;
   }
 
   &::before {
     content: "";
     width: 1px;
     height: 100%;
-    background-color: rgba(255, 255, 255, .2);
+    background-color: rgba(255, 255, 255, 0.2);
     position: absolute;
     top: 0;
     left: 24.5%;
@@ -31,7 +35,7 @@
       left: 34%;
     }
 
-    @include d(991) {
+    @include d(767) {
       display: none;
     }
   }
@@ -42,10 +46,10 @@
   position: relative;
   z-index: 12;
 
-  @include d(991) {
-    padding-left: 15px;
-  }
+
   @include d(767) {
+    padding-left: 15px;
+
     padding-left: 0;
     max-width: 80px;
   }
@@ -72,6 +76,7 @@
     pointer-events: none;
     left: -100px;
     transition: opacity $hover-duration $timing, left $hover-duration $timing;
+
     @include d(575) {
       width: 100vw;
     }
@@ -204,9 +209,14 @@
   height: 20px;
 
   @include d(991) {
-    top: -2px;
-    right: 45px;
+    top: 40%;
+    transform: translate(0, -50%);
+    right: 10px;
     max-width: 40%;
+  }
+
+  @include d(767) {
+    right: 30px;
   }
 
   .btn-search {
@@ -215,7 +225,7 @@
     right: -4px;
     transform: translate(-50%, -50%);
 
-    @include d(991) {
+    @include d(767) {
       background-image: url(../img/svg/search-black.svg);
     }
 
@@ -224,7 +234,7 @@
       width: 30px;
       height: 30px;
 
-      @include d(991) {
+      @include d(767) {
         width: 20px;
         height: 20px;
         background-image: url(../img/svg/close-black.svg);
@@ -234,6 +244,7 @@
     &_submit {
       left: 0;
       top: 10px;
+
       @include d(991) {
         width: 18px;
         height: 18px;
@@ -248,17 +259,22 @@
     width: 100%;
     opacity: 0;
     pointer-events: none;
+
     @include d(991) {
       top: 7px;
     }
+
     &.active {
       opacity: 1;
       pointer-events: initial;
       padding-bottom: 25px;
-      border-bottom: 1px solid #D7D7D7;
+      border-bottom: 1px solid #d7d7d7;
 
       @include d(991) {
         padding-bottom: 5px;
+      }
+
+      @include d(767) {
         border-bottom: 1px solid $black;
       }
     }
@@ -273,7 +289,7 @@
       background-color: transparent;
       color: $white;
 
-      @include d(991) {
+      @include d(767) {
         font-size: 14px;
         color: $black;
       }
@@ -283,7 +299,7 @@
         font-size: 16px;
         color: $white;
 
-        @include d(991) {
+        @include d(767) {
           font-size: 14px;
           color: $black;
         }
@@ -294,7 +310,7 @@
         font-size: 16px;
         color: $white;
 
-        @include d(991) {
+        @include d(767) {
           font-size: 14px;
           color: $black;
         }
@@ -305,7 +321,7 @@
         font-size: 16px;
         color: $white;
 
-        @include d(991) {
+        @include d(767) {
           font-size: 14px;
           color: $black;
         }
@@ -316,7 +332,7 @@
         font-size: 16px;
         color: $white;
 
-        @include d(991) {
+        @include d(767) {
           font-size: 14px;
           color: $black;
         }
@@ -328,16 +344,26 @@
 .burger {
   display: none;
 
+  &.hidden {
+    pointer-events: none;
+    opacity: 0;
+  }
+
   @include d(991) {
     display: block;
     position: absolute;
-    top: 20%;
-    right: 15px;
+    top: 50%;
+    right: 45px;
     width: 18px;
     height: 12px;
     padding: 0;
     background-color: transparent;
     border: none;
+    transform: translate(0, -50%);
+  }
+
+  @include d(767) {
+    right: 0;
   }
 
   &.active {
@@ -364,11 +390,15 @@
     height: 2px;
     position: absolute;
     left: 0;
-    background-color: $black;
+    background-color: $white;
     z-index: 10;
     transition: width $hover-duration $timing, opacity $hover-duration $timing,
       transform $hover-duration $timing, top $hover-duration $timing,
       bottom $hover-duration $timing;
+
+    @include d(767) {
+      background-color: $black;
+    }
 
     &:first-child {
       top: 0;
@@ -415,7 +445,6 @@
     }
 
     &>li {
-
       &>a {
         font-weight: bold;
         padding-bottom: 15px;

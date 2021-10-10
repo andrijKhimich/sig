@@ -3,6 +3,9 @@
     max-width: 850px;
     padding: 40px 0;
     border-bottom: 1px solid $grey1;
+    @include d(767) {
+      border-bottom: none;
+    }
     .title-4,
     h4 {
       padding: 14px 0;
@@ -10,6 +13,12 @@
 
     .btn {
       margin-top: 20px;
+      @include d(767) {
+        margin-right: 0;
+        margin-left: auto;
+        display: block;
+        max-width: 140px;
+      }
     }
   }
 }

@@ -1,0 +1,22 @@
+.popup {
+  position: absolute;
+  max-width: 500px;
+  background-color: $white;
+  text-align: center;
+  padding: 80px 120px 70px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  h4,
+  .title-4 {
+    color: $titleColor;
+    margin-bottom: 10px;
+  }
+
+  p {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 1.4em;
+  }
+}

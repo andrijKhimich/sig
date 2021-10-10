@@ -1,26 +1,58 @@
 .insights {
+  &__title {
+    margin-bottom: 40px;
+
+    h1,
+    .title-2,
+    h2,
+    .title-2 {
+      max-width: 900px;
+      margin-right: 80px;
+      color: $titleColor;
+
+      @include d(991) {
+        margin-right: 0;
+        font-size: 24px;
+        max-width: 460px;
+      }
+
+      @include d(767) {
+        max-width: 100%;
+      }
+    }
+
+  }
+
   &__content {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
     .knowledge-card {
       @include d(991) {
         max-width: 32%;
       }
+
       @include d(767) {
         max-width: 49%;
       }
+
       @include d(575) {
         max-width: 100%;
         margin: 0 auto 40px auto;
       }
     }
+
     .knowledge-card:not(:first-child) {
       display: block;
     }
+
     &_top {
       margin: 0 -15px;
-      flex-wrap: wrap;
+      // flex-wrap: wrap;
+      img, picture {
+        width: auto;
+      }
       @include d(991) {
         display: flex;
 
@@ -28,6 +60,7 @@
           display: block;
         }
       }
+
       @include d(767) {
         display: none;
       }
@@ -37,7 +70,7 @@
       }
 
       .knowledge-slider__item:first-child {
-        flex: 0 0 660px;
+        flex: 0 0 60%;
 
         @include d(991) {
           flex: 0 0 60%;
@@ -52,7 +85,7 @@
       }
 
       .knowledge-slider__item:last-child {
-        flex: 0 0 100%;
+        flex: 0 0 40%;
 
         @include d(991) {
           flex: 0 0 40%;
