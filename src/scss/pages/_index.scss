@@ -1,4 +1,5 @@
 @import "../base/variables";
+@import "../base/mixins";
 
 .hero {
   height: 100vh;
@@ -11,14 +12,12 @@
   @include d(767) {
     height: auto;
   }
-
   &-video {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
-
     video {
       position: absolute;
       top: 0;

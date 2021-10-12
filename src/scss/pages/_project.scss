@@ -1,4 +1,5 @@
 @import "../base/variables";
+@import "../base/mixins";
 
 .project {
   &-hero {
@@ -36,6 +37,11 @@
     margin-bottom: 20px;
     padding: 0 15px;
   }
+
+  .btn {
+    margin-left: 15px;
+  }
+
 }
 
 .services {
@@ -45,7 +51,7 @@
     padding: 80px 0;
   }
 
-  @include d (991) {
+  @include d(991) {
     padding: 60px 0 20px 0;
   }
 
@@ -83,7 +89,7 @@
     }
 
     &::before {
-      content: "0"counter(counter);
+      content: "0" counter(counter);
       position: absolute;
       top: 50%;
       transform: translate(0, -50%);
@@ -164,7 +170,7 @@
     position: relative;
 
     &::before {
-      content: "0"counter(counter);
+      content: "0" counter(counter);
       position: absolute;
       top: 0;
       transform: translate(0, -50%);
@@ -276,7 +282,7 @@
   max-width: 990px;
   margin: 60px auto;
 
-  @include d (991) {
+  @include d(991) {
     margin: 40px 0;
   }
 
@@ -373,7 +379,7 @@
 }
 
 .knowledge__related {
-  @include d (767) {
+  @include d(767) {
     .align-items-center {
       @include d(767) {
         margin-bottom: 30px;
@@ -398,8 +404,10 @@
 
   &_lg {
     padding-bottom: 0;
+
     .card__project {
-      @include d(767) {}
+      @include d(767) {
+      }
 
       &:first-of-type {
         flex: 0 0 100%;
@@ -465,6 +473,15 @@
 .card__project {
   display: block;
 
+  picture, img {
+    height: 310px;
+    overflow: hidden;
+    @include d(1199) {
+      height: 260px;
+    }
+
+  }
+
   &:hover {
 
     & .title-4,
@@ -528,7 +545,7 @@
         pointer-events: none;
       }
 
-      &>a {
+      & > a {
         position: relative;
         padding-left: 15px;
         padding-bottom: 10px;
@@ -543,7 +560,7 @@
       &.slick-current {
         pointer-events: initial;
 
-        &>a {
+        & > a {
           color: $black;
 
           &::after {
@@ -585,7 +602,7 @@
 
 
       &_icon {
-        &>a {
+        & > a {
 
           &::before,
           &::after {
@@ -652,7 +669,7 @@
 
 
         &_inner {
-          &>a {
+          & > a {
 
             &::before,
             &::after {
@@ -770,7 +787,7 @@
             left: 0;
           }
 
-          &>a {
+          & > a {
             &:hover {
               color: $primary;
               text-decoration: underline;
@@ -784,6 +801,7 @@
 
 .card__related {
   max-width: 100%;
+
   img {
     max-height: 260px;
   }
