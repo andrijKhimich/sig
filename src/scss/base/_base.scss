@@ -191,6 +191,7 @@ ol {
     @include d(991) {
       margin-bottom: 20px;
     }
+
     p {
       font-weight: 500;
     }
@@ -259,7 +260,7 @@ input {
   width: 100%;
   border: none;
   transition: border-color $timing $hover-duration,
-    color $timing $hover-duration;
+  color $timing $hover-duration;
 
   &:focus {
     outline: none;
@@ -540,8 +541,8 @@ textarea {
   padding: 0 29px;
   border: 1px solid transparent;
   transition: color $hover-duration $timing,
-    background-color $hover-duration $timing,
-    border-color $hover-duration $timing;
+  background-color $hover-duration $timing,
+  border-color $hover-duration $timing;
 
   &_primary {
     border-color: $primary;
@@ -577,6 +578,7 @@ textarea {
   font-size: 14px;
   font-weight: 500;
   line-height: 20px;
+
   a {
     text-decoration: underline;
     font-weight: 500;
@@ -627,7 +629,7 @@ textarea {
     display: block;
   }
 
-  &>.article-description {
+  & > .article-description {
     padding: 0 15px;
 
     @include d(767) {
@@ -784,3 +786,53 @@ textarea {
     }
   }
 }
+
+.page-pagination {
+  margin: 40px 0;
+}
+
+.pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-size: 12px;
+
+  li {
+    color: $grey;
+    position: relative;
+    width: 20px;
+    font-weight: 500;
+    margin-bottom: 20px;
+
+    &.active {
+      color: $titleColor;
+      font-weight: 700;
+    }
+
+    &:not(:last-child) {
+      margin-right: 26px;
+
+      &.active {
+        width: 120px;
+        transition: .4s ease;
+
+        &::before {
+          width: 100px;
+        }
+      }
+
+      &::before {
+        content: '';
+        width: 0;
+        height: 1px;
+        background-color: $titleColor;
+        position: absolute;
+        top: 50%;
+        left: 30px;
+      }
+
+    }
+  }
+}
+

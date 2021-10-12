@@ -1,256 +1,270 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <title>Project | Projects</title>
-    @@include('links/_head.html')
-  </head>
+<head>
+  <title>Project | Projects</title>
+  @@include('links/_head.html')
+</head>
 
-  <body>
-    <div class="main-wrapper inner-page js-fade-in">
-      @@include('components/_header.html')
-      <main class="main main-inner">
-        <div class="breadcrumb">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <ul class="breadcrumb-list">
-                  <li>
-                    <a href="#">Home</a>
-                  </li>
-                  <li>
-                    <a href="#">Projects</a>
-                  </li>
-                </ul>
-              </div>
+<body>
+<div class="main-wrapper inner-page js-fade-in">
+  @@include('components/_header.html')
+  <main class="main main-inner">
+    <div class="breadcrumb">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <ul class="breadcrumb-list">
+              <li>
+                <a href="#">Home</a>
+              </li>
+              <li>
+                <a href="#">Projects</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <section class="section expertise-hero">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <div class="insights__title">
+              <h1 class="title-2">Projects</h1>
             </div>
           </div>
         </div>
-        <section class="section expertise-hero">
-          <div class="container">
-            <div class="row">
-              <div class="col-12">
-                <div class="insights__title">
-                  <h1 class="title-2">Projects</h1>
-                </div>
+      </div>
+    </section>
+    <section class="section expetise">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-3">
+            <aside class="expertise-sidebar">
+              <div class="expertise__search">
+                <form action="#">
+                  <button class="btn-search" type="button"></button>
+                  <label>
+                    <input type="search" class="form-control" placeholder="Search"/>
+                  </label>
+                </form>
               </div>
-            </div>
-          </div>
-        </section>
-        <section class="section expetise">
-          <div class="container">
-            <div class="row">
-              <div class="col-lg-3">
-                <aside class="expertise-sidebar">
-                  <div class="expertise__search">
-                    <form action="#">
-                      <button class="btn-search" type="button"></button>
-                      <label>
-                        <input type="search" class="form-control" placeholder="Search" />
-                      </label>
-                    </form>
-                  </div>
-                  <h5 class="title-5">Filter by</h5>
-                  <ul class="projects-accordion" id="expertiseMenu">
-                    <li class="projects-accordion__item">
-                      <a href="#">All Projects</a>
-                    </li>
-                    <li class="projects-accordion__item">
-                      <a href="#">Expertise</a>
-                      <ul class="projects-accordion__sublist">
-                        <li class="projects-accordion__subitem">
-                          <a href="#">Building Services </a>
-                          <ul>
-                            <li>
-                              <a href="#">Sustainable buildings </a>
-                            </li>
-                            <li>
-                              <a href="#">Healthy buildings </a>
-                            </li>
-                            <li>
-                              <a href="#">Specialty services</a>
-                            </li>
-                          </ul>
+              <h5 class="title-5">Filter by</h5>
+              <ul class="projects-accordion" id="expertiseMenu">
+                <li class="projects-accordion__item">
+                  <a href="#">All Projects</a>
+                </li>
+                <li class="projects-accordion__item">
+                  <a href="#">Expertise</a>
+                  <ul class="projects-accordion__sublist">
+                    <li class="projects-accordion__subitem">
+                      <a href="#">Building Services </a>
+                      <ul>
+                        <li>
+                          <a href="#">Sustainable buildings </a>
                         </li>
-                        <li class="projects-accordion__subitem">
-                          <a href="#">Strategy & Advisory </a>
-                          <ul>
-                            <li>
-                              <a href="#">Sustainable buildings </a>
-                            </li>
-                            <li>
-                              <a href="#">Healthy buildings </a>
-                            </li>
-                            <li>
-                              <a href="#">Specialty services</a>
-                            </li>
-                          </ul>
+                        <li>
+                          <a href="#">Healthy buildings </a>
                         </li>
-                        <li class="projects-accordion__subitem">
-                          <a href="#">Compliance & Reporting</a>
-                          <ul>
-                            <li>
-                              <a href="#">Sustainable buildings </a>
-                            </li>
-                            <li>
-                              <a href="#">Healthy buildings </a>
-                            </li>
-                            <li>
-                              <a href="#">Specialty services</a>
-                            </li>
-                          </ul>
+                        <li>
+                          <a href="#">Specialty services</a>
                         </li>
                       </ul>
                     </li>
-                    <li class="projects-accordion__item">
-                      <a href="#">Location</a>
-                      <ul class="projects-accordion__sublist">
-                        <li class="projects-accordion__subitem">
-                          <a href="#"> Decarbonization </a>
+                    <li class="projects-accordion__subitem">
+                      <a href="#">Strategy & Advisory </a>
+                      <ul>
+                        <li>
+                          <a href="#">Sustainable buildings </a>
                         </li>
-                        <li class="projects-accordion__subitem">
-                          <a href="#"> Social wellbeing </a>
+                        <li>
+                          <a href="#">Healthy buildings </a>
                         </li>
-                        <li class="projects-accordion__subitem">
-                          <a href="#"> Corporate Sustainability </a>
-                        </li>
-                        <li class="projects-accordion__subitem">
-                          <a href="#"> Compliance & Reporting </a>
+                        <li>
+                          <a href="#">Specialty services</a>
                         </li>
                       </ul>
                     </li>
-                    <li class="projects-accordion__item">
-                      <a href="#">Building type </a>
-                      <ul class="projects-accordion__sublist">
-                        <li class="projects-accordion__subitem">
-                          <a href="#"> Sustainable buildings</a>
+                    <li class="projects-accordion__subitem">
+                      <a href="#">Compliance & Reporting</a>
+                      <ul>
+                        <li>
+                          <a href="#">Sustainable buildings </a>
                         </li>
-                        <li class="projects-accordion__subitem">
-                          <a href="#"> Healthy buildings</a>
+                        <li>
+                          <a href="#">Healthy buildings </a>
                         </li>
-                        <li class="projects-accordion__subitem">
-                          <a href="#"> Specialty services</a>
-                        </li>
-                      </ul>
-                    </li>
-                    <li class="projects-accordion__item">
-                      <a href="#">Certification type</a>
-                    </li>
-                  </ul>
-                  <h5 class="title-5">Sort by</h5>
-                  <ul class="projects-accordion">
-                    <li class="projects-accordion__item">
-                      <a href="#">Most Recent</a>
-                      <ul class="projects-accordion__sublist">
-                        <li class="projects-accordion__subitem">
-                          <a href="#"> Title A-Z</a>
-                        </li>
-                        <li class="projects-accordion__subitem">
-                          <a href="#"> Title Z-A</a>
+                        <li>
+                          <a href="#">Specialty services</a>
                         </li>
                       </ul>
                     </li>
                   </ul>
-                </aside>
-              </div>
-              <div class="col-lg-9">
-                <div class="projects-content">
-                  <a href="#" class="card card__project">
-                    <img src="img/project/project-1.jpg" alt="432 Park Avenue " />
-                    <div class="card__content">
-                      <h4 class="title-4">432 Park Avenue</h4>
-                      <p>Tallest residential tower in the western hemisphere</p>
-                    </div>
-                  </a>
-                  <a href="#" class="card card__project">
-                    <img src="img/project/project-2.jpg" alt="432 Park Avenue " />
-                    <div class="card__content">
-                      <h4 class="title-4">432 Park Avenue</h4>
-                      <p>Tallest residential tower in the western hemisphere</p>
-                    </div>
-                  </a>
-                  <a href="#" class="card card__project">
-                    <img src="img/project/project-3.jpg" alt="432 Park Avenue " />
-                    <div class="card__content">
-                      <h4 class="title-4">432 Park Avenue</h4>
-                      <p>Tallest residential tower in the western hemisphere</p>
-                    </div>
-                  </a>
-                  <a href="#" class="card card__project">
-                    <img src="img/project/project-4.jpg" alt="432 Park Avenue " />
-                    <div class="card__content">
-                      <h4 class="title-4">432 Park Avenue</h4>
-                      <p>Tallest residential tower in the western hemisphere</p>
-                    </div>
-                  </a>
-                  <a href="#" class="card card__project">
-                    <img src="img/project/project-5.jpg" alt="432 Park Avenue " />
-                    <div class="card__content">
-                      <h4 class="title-4">432 Park Avenue</h4>
-                      <p>Tallest residential tower in the western hemisphere</p>
-                    </div>
-                  </a>
-                  <a href="#" class="card card__project">
-                    <img src="img/project/project-6.jpg" alt="432 Park Avenue " />
-                    <div class="card__content">
-                      <h4 class="title-4">432 Park Avenue</h4>
-                      <p>Tallest residential tower in the western hemisphere</p>
-                    </div>
-                  </a>
-                  <a href="#" class="card card__project">
-                    <img src="img/project/project-7.jpg" alt="432 Park Avenue " />
-                    <div class="card__content">
-                      <h4 class="title-4">432 Park Avenue</h4>
-                      <p>Tallest residential tower in the western hemisphere</p>
-                    </div>
-                  </a>
-                  <a href="#" class="card card__project">
-                    <img src="img/project/project-8.jpg" alt="432 Park Avenue " />
-                    <div class="card__content">
-                      <h4 class="title-4">432 Park Avenue</h4>
-                      <p>Tallest residential tower in the western hemisphere</p>
-                    </div>
-                  </a>
-                  <a href="#" class="card card__project">
-                    <img src="img/project/project-9.jpg" alt="432 Park Avenue " />
-                    <div class="card__content">
-                      <h4 class="title-4">432 Park Avenue</h4>
-                      <p>Tallest residential tower in the western hemisphere</p>
-                    </div>
-                  </a>
-                  <a href="#" class="card card__project" `>
-                    <img src="img/project/project-1.jpg" alt="432 Park Avenue " />
-                    <div class="card__content">
-                      <h4 class="title-4">432 Park Avenue</h4>
-                      <p>Tallest residential tower in the western hemisphere</p>
-                    </div>
-                  </a>
-                  <a href="#" class="card card__project">
-                    <img src="img/project/project-2.jpg" alt="432 Park Avenue " />
-                    <div class="card__content">
-                      <h4 class="title-4">432 Park Avenue</h4>
-                      <p>Tallest residential tower in the western hemisphere</p>
-                    </div>
-                  </a>
-                  <a href="#" class="card card__project">
-                    <img src="img/project/project-3.jpg" alt="432 Park Avenue " />
-                    <div class="card__content">
-                      <h4 class="title-4">432 Park Avenue</h4>
-                      <p>Tallest residential tower in the western hemisphere</p>
-                    </div>
-                  </a>
+                </li>
+                <li class="projects-accordion__item">
+                  <a href="#">Location</a>
+                  <ul class="projects-accordion__sublist">
+                    <li class="projects-accordion__subitem">
+                      <a href="#"> Decarbonization </a>
+                    </li>
+                    <li class="projects-accordion__subitem">
+                      <a href="#"> Social wellbeing </a>
+                    </li>
+                    <li class="projects-accordion__subitem">
+                      <a href="#"> Corporate Sustainability </a>
+                    </li>
+                    <li class="projects-accordion__subitem">
+                      <a href="#"> Compliance & Reporting </a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="projects-accordion__item">
+                  <a href="#">Building type </a>
+                  <ul class="projects-accordion__sublist">
+                    <li class="projects-accordion__subitem">
+                      <a href="#"> Sustainable buildings</a>
+                    </li>
+                    <li class="projects-accordion__subitem">
+                      <a href="#"> Healthy buildings</a>
+                    </li>
+                    <li class="projects-accordion__subitem">
+                      <a href="#"> Specialty services</a>
+                    </li>
+                  </ul>
+                </li>
+                <li class="projects-accordion__item">
+                  <a href="#">Certification type</a>
+                </li>
+              </ul>
+              <h5 class="title-5">Sort by</h5>
+              <ul class="projects-accordion">
+                <li class="projects-accordion__item">
+                  <a href="#">Most Recent</a>
+                  <ul class="projects-accordion__sublist">
+                    <li class="projects-accordion__subitem">
+                      <a href="#"> Title A-Z</a>
+                    </li>
+                    <li class="projects-accordion__subitem">
+                      <a href="#"> Title Z-A</a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </aside>
+          </div>
+          <div class="col-lg-9">
+            <div class="projects-content">
+              <a href="#" class="card card__project">
+                <img src="img/project/project-1.jpg" alt="432 Park Avenue "/>
+                <div class="card__content">
+                  <h4 class="title-4">432 Park Avenue</h4>
+                  <p>Tallest residential tower in the western hemisphere</p>
                 </div>
-                <!-- <div class="projects-btns">
-                  <a href="#" class="btn btn_primary">See More</a>
-                </div> -->
-              </div>
+              </a>
+              <a href="#" class="card card__project">
+                <img src="img/project/project-2.jpg" alt="432 Park Avenue "/>
+                <div class="card__content">
+                  <h4 class="title-4">432 Park Avenue</h4>
+                  <p>Tallest residential tower in the western hemisphere</p>
+                </div>
+              </a>
+              <a href="#" class="card card__project">
+                <img src="img/project/project-3.jpg" alt="432 Park Avenue "/>
+                <div class="card__content">
+                  <h4 class="title-4">432 Park Avenue</h4>
+                  <p>Tallest residential tower in the western hemisphere</p>
+                </div>
+              </a>
+              <a href="#" class="card card__project">
+                <img src="img/project/project-4.jpg" alt="432 Park Avenue "/>
+                <div class="card__content">
+                  <h4 class="title-4">432 Park Avenue</h4>
+                  <p>Tallest residential tower in the western hemisphere</p>
+                </div>
+              </a>
+              <a href="#" class="card card__project">
+                <img src="img/project/project-5.jpg" alt="432 Park Avenue "/>
+                <div class="card__content">
+                  <h4 class="title-4">432 Park Avenue</h4>
+                  <p>Tallest residential tower in the western hemisphere</p>
+                </div>
+              </a>
+              <a href="#" class="card card__project">
+                <img src="img/project/project-6.jpg" alt="432 Park Avenue "/>
+                <div class="card__content">
+                  <h4 class="title-4">432 Park Avenue</h4>
+                  <p>Tallest residential tower in the western hemisphere</p>
+                </div>
+              </a>
+              <a href="#" class="card card__project">
+                <img src="img/project/project-7.jpg" alt="432 Park Avenue "/>
+                <div class="card__content">
+                  <h4 class="title-4">432 Park Avenue</h4>
+                  <p>Tallest residential tower in the western hemisphere</p>
+                </div>
+              </a>
+              <a href="#" class="card card__project">
+                <img src="img/project/project-8.jpg" alt="432 Park Avenue "/>
+                <div class="card__content">
+                  <h4 class="title-4">432 Park Avenue</h4>
+                  <p>Tallest residential tower in the western hemisphere</p>
+                </div>
+              </a>
+              <a href="#" class="card card__project">
+                <img src="img/project/project-9.jpg" alt="432 Park Avenue "/>
+                <div class="card__content">
+                  <h4 class="title-4">432 Park Avenue</h4>
+                  <p>Tallest residential tower in the western hemisphere</p>
+                </div>
+              </a>
+              <a href="#" class="card card__project" `>
+                <img src="img/project/project-1.jpg" alt="432 Park Avenue "/>
+                <div class="card__content">
+                  <h4 class="title-4">432 Park Avenue</h4>
+                  <p>Tallest residential tower in the western hemisphere</p>
+                </div>
+              </a>
+              <a href="#" class="card card__project">
+                <img src="img/project/project-2.jpg" alt="432 Park Avenue "/>
+                <div class="card__content">
+                  <h4 class="title-4">432 Park Avenue</h4>
+                  <p>Tallest residential tower in the western hemisphere</p>
+                </div>
+              </a>
+              <a href="#" class="card card__project">
+                <img src="img/project/project-3.jpg" alt="432 Park Avenue "/>
+                <div class="card__content">
+                  <h4 class="title-4">432 Park Avenue</h4>
+                  <p>Tallest residential tower in the western hemisphere</p>
+                </div>
+              </a>
+            </div>
+            <!-- <div class="projects-btns">
+              <a href="#" class="btn btn_primary">See More</a>
+            </div> -->
+            <div class="page-pagination">
+              <ul class="pagination">
+                <li class="active">
+                  <a href="#">01</a>
+                </li>
+                <li>
+                  <a href="#">02</a>
+                </li>
+                <li>
+                  <a href="#">03</a>
+                </li>
+              </ul>
             </div>
           </div>
-        </section>
-      </main>
-      @@include('components/_footer.html')
-    </div>
-    @@include('links/_scripts.html')
-  </body>
+
+        </div>
+      </div>
+    </section>
+  </main>
+  @@include('components/_footer.html')
+</div>
+@@include('links/_scripts.html')
+</body>
 
 </html>
