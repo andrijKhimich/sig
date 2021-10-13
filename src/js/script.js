@@ -110,7 +110,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   let accordionProjectsItem = document.querySelectorAll(
-    ".projects-accordion__item_icon > a"
+    ".projects-accordion__item_icon > a, .projects-accordion__item_icon > span"
   );
   for (let i = 0; i < accordionProjectsItem.length; i++) {
     accordionProjectsItem[i].addEventListener("click", function (e) {
@@ -130,7 +130,7 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   let accordionProjectsItemInner = document.querySelectorAll(
-    ".projects-accordion__item_icon_inner > a"
+    ".projects-accordion__item_icon_inner > a, .projects-accordion__item_icon_inner > span"
   );
   for (let i = 0; i < accordionProjectsItemInner.length; i++) {
     accordionProjectsItemInner[i].addEventListener("click", function (e) {
@@ -364,14 +364,14 @@ svg4everybody();
 function testWebP(callback) {
   let webP = new Image();
   webP.onload = webP.onerror = function () {
-    callback(webP.height == 2);
+    callback(webP.height === 2);
   };
   webP.src =
     "data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA";
 }
 
 testWebP(function (support) {
-  if (support == true) {
+  if (support === true) {
     document.querySelector("body").classList.add("webp");
   } else {
     document.querySelector("body").classList.add("no-webp");

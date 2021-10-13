@@ -546,13 +546,12 @@
         pointer-events: none;
       }
 
-      & > a {
+      & > a, & > span {
         position: relative;
         padding-left: 15px;
         padding-bottom: 10px;
 
         @include d(767) {
-          padding-left: 0;
           padding-right: 20px;
           margin-bottom: 10px;
         }
@@ -561,7 +560,7 @@
       &.slick-current {
         pointer-events: initial;
 
-        & > a {
+        & > a, & > span {
           color: $black;
 
           &::after {
@@ -603,7 +602,7 @@
 
 
       &_icon {
-        & > a {
+        & > a, & > span {
 
           &::before,
           &::after {
@@ -670,7 +669,7 @@
 
 
         &_inner {
-          & > a {
+          & > a, & > span {
 
             &::before,
             &::after {
@@ -788,7 +787,7 @@
             left: 0;
           }
 
-          & > a {
+          & > a, & > span {
             &:hover {
               color: $primary;
               text-decoration: underline;
