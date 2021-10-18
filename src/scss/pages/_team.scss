@@ -137,7 +137,20 @@
 }
 
 .card__team {
-  max-width: 100%;
+  max-width: initial;
+  width: 100%;
+
+  &_img {
+    position: relative;
+    height: 360px;
+    margin-bottom: 30px;
+    img, picture {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
 
   &::before {
     display: none;

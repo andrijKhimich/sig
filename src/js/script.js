@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
   let accordionItem = document.querySelectorAll(".js-accordion-item");
   for (let i = 0; i < accordionItem.length; i++) {
     accordionItem[i].addEventListener("click", function (e) {
-      e.preventDefault();
+      // e.preventDefault();
       this.classList.toggle("active");
       let accordionSublist = this.querySelector(
         ".expertise-accordion__sublist"
@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
   );
   for (let i = 0; i < accordionProjectsItem.length; i++) {
     accordionProjectsItem[i].addEventListener("click", function (e) {
-      e.preventDefault();
+      // e.preventDefault();
       this.classList.toggle("active");
       let accordionProjectsSublist = this.parentElement.querySelector(
         ".projects-accordion__sublist"

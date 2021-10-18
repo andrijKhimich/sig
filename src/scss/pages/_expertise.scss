@@ -1,5 +1,5 @@
 @import "../base/variables";
-
+@import "../base/mixins";
 .expertise {
   &-hero {
     padding-bottom: 25px;
@@ -87,7 +87,7 @@
         pointer-events: none;
       }
 
-      &>a {
+      &>a, &>span {
         position: relative;
         padding-left: 15px;
         margin-bottom: 5px;
@@ -102,7 +102,7 @@
       &.slick-current {
         pointer-events: initial;
 
-        &>a {
+        &>a, &>span {
           color: $black;
 
           &::after {
@@ -144,7 +144,7 @@
 
 
       &_icon {
-        &>a {
+        &>a, &>span {
 
           &::before,
           &::after {
@@ -192,7 +192,7 @@
           color: $titleColor;
           font-weight: 600;
 
-          a {
+          a, span {
             &::after {
               transform: rotate(90deg);
               background-color: $titleColor;
@@ -244,7 +244,7 @@
         font-weight: 500;
       }
 
-      &:hover a {
+      &:hover a, span {
         color: $titleColor;
         text-decoration: underline;
       }
