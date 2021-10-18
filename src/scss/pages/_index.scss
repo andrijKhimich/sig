@@ -12,12 +12,24 @@
   @include d(767) {
     height: auto;
   }
+
   &-video {
     position: absolute;
     top: 0;
     left: 0;
     bottom: 0;
     right: 0;
+
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+      background-color: rgba(49, 49, 49, 0.4);
+    }
+
     video {
       position: absolute;
       top: 0;
