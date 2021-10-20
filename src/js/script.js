@@ -191,7 +191,6 @@ function initKnowledgeSlider() {
       arrows: false,
       infinite: true,
       mobileFirst: true,
-      // infinite: true,
       responsive: [{
         breakpoint: 991,
         settings: "unslick",
