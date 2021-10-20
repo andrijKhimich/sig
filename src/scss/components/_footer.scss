@@ -42,9 +42,11 @@
       display: flex;
       align-items: center;
       margin-bottom: 50px;
+
       @include d(767) {
         margin-bottom: 20px;
       }
+
       li:not(:last-child) {
         margin-right: 20px;
       }
@@ -131,10 +133,11 @@
 
     ul {
       li {
-        margin-bottom: 7px;
+        margin-bottom: 5px;
 
-        a {
-          font-weight: 500;
+        &.footer-list__subtitle {
+          margin-bottom: 12px;
+
         }
       }
     }
@@ -153,7 +156,7 @@
     text-transform: uppercase;
     font-weight: 700;
     font-size: 12px;
-    margin-bottom: 12px;
+
   }
 
   &-form {
