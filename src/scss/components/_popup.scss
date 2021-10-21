@@ -11,7 +11,8 @@
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
-
+  display: none;
+  
   h4,
   .title-4 {
     color: $titleColor;

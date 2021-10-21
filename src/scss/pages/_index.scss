@@ -433,9 +433,6 @@
 .knowledge {
   padding: 100px 0 0 0;
 
-  @include d(1199) {
-    padding: 100px 0 0 0;
-  }
 
   @include d(991) {
     padding: 60px 0 20px 0;
