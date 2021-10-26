@@ -801,8 +801,11 @@
 
 .card__related {
   max-width: 100%;
-  
-  img {
-    max-height: 260px;
+
+  img, picture {
+    height: 260px;
+    object-fit: cover;
+    object-position: top;
+    margin-bottom: 30px;
   }
 }
