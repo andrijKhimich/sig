@@ -47,8 +47,28 @@
     justify-content: space-between;
     color: $titleColor;
     margin-bottom: 60px;
+
     @include d(767) {
       margin-bottom: 20px;
+    }
+
+    h1,
+    .title-2,
+    h2,
+    .title-2 {
+      font-size: 54px;
+
+      @include d(1199) {
+        font-size: 48px;
+      }
+
+      @include d(991) {
+        font-size: 30px;
+      }
+
+      @include d(767) {
+        font-size: 26px;
+      }
     }
   }
 
@@ -56,9 +76,11 @@
     font-size: 14px;
     margin: 30px 0;
 
-    p, strong {
+    p,
+    strong {
       line-height: 20px;
       display: block;
+
       &:not(:last-child) {
         margin-bottom: 15px;
       }
@@ -68,6 +90,7 @@
   &__article {
     display: flex;
     justify-content: center;
+
     @include d(767) {
       flex-wrap: wrap;
     }
@@ -97,6 +120,7 @@
     @include d(991) {
       max-width: 490px;
     }
+
     @include d(767) {
       max-width: 100%;
     }
@@ -114,9 +138,11 @@
         margin-bottom: 40px;
       }
     }
+
     a {
       text-decoration: underline;
     }
+
     ul {
       margin: 20px 0;
 
@@ -147,7 +173,9 @@
     position: relative;
     height: 360px;
     margin-bottom: 30px;
-    img, picture {
+
+    img,
+    picture {
       position: absolute;
       top: 50%;
       left: 50%;
