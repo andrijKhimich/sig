@@ -6,7 +6,7 @@
   position: relative;
 
   @include d(991) {
-    height: 80vh;
+    // height: 80vh;
   }
 
   @include d(767) {
@@ -19,6 +19,14 @@
     left: 0;
     bottom: 0;
     right: 0;
+    overflow: hidden;
+
+    @include d(767) {
+      position: relative;
+      height: 60vh;
+      margin-bottom: 40px;
+
+    }
 
     &::after {
       content: "";
@@ -40,6 +48,9 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
+      @include d(991) {
+        position: static;
+      }
     }
   }
 
@@ -94,7 +105,8 @@
       position: static;
       color: $black;
       padding-left: 15px;
-
+      bottom: 0;
+      left: 0;
       .read-more_circle {
         border-color: $black;
 
@@ -202,12 +214,13 @@
 
     @include d(991) {
       flex: 0 0 50%;
-      padding: 4px;
+      padding: 10px;
     }
 
     @include d(767) {
       flex: 0 0 100%;
       max-width: 100%;
+      padding: 4px;
     }
   }
 
@@ -932,7 +945,7 @@
   .title-2,
   h2 {
     position: absolute;
-    bottom: 97%;
+    bottom: 98%;
     left: 0;
     font-size: 96px;
     color: $primary;
