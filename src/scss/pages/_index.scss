@@ -48,6 +48,7 @@
       height: 100%;
       object-fit: cover;
       object-position: center;
+
       @include d(991) {
         position: static;
       }
@@ -107,6 +108,7 @@
       padding-left: 15px;
       bottom: 0;
       left: 0;
+
       .read-more_circle {
         border-color: $titleColor;
 
@@ -171,6 +173,7 @@
 
 .expertise {
   padding: 40px 0 90px 0;
+
   @include d(991) {
     padding: 40px 0;
   }
@@ -435,9 +438,8 @@
 .knowledge {
   padding: 70px 0 0 0;
 
-
   @include d(991) {
-    padding: 60px 0 20px 0;
+    padding: 60px 0 0 0;
   }
 
   &-slider {
@@ -448,12 +450,16 @@
       display: block;
     }
 
-    @include d(575) {
-      margin-right: 20%;
+    .slick-track {
+      // display: block;
+    }
 
-      .slick-list {
-        overflow: visible;
-      }
+    @include d(575) {
+      // margin-right: 20%;
+
+      // .slick-list {
+      // overflow: visible;
+      // }
     }
 
     &__item {
@@ -463,17 +469,30 @@
       &:last-child {
         flex: 0 0 25%;
 
-        @include d(991) {
-          flex: 0 0 auto;
-        }
+        // @include d(991) {
+        // flex: 0 0 auto;
+        // }
       }
 
       &:nth-child(2) {
         flex: 0 0 50%;
 
-        @include d(991) {
-          flex: 0 0 auto;
-        }
+        // @include d(991) {
+        // flex: 0 0 auto;
+        // }
+      }
+    }
+
+    .knowledge-card {
+      @include d(991) {
+        padding: 0 15px;
+        flex: 0 0 50vw;
+        max-width: 50vw;
+      }
+
+      @include d(575) {
+        flex: 0 0 100vw;
+        max-width: 100vw;
       }
     }
   }
@@ -530,11 +549,11 @@
       max-width: 100%;
     }
 
-    @include d(991) {
-      &:not(:first-child) {
-        display: none;
-      }
-    }
+    // @include d(991) {
+    //   &:not(:first-child) {
+    //     display: none;
+    //   }
+    // }
 
     &_lg {
       flex: 0 0 640px;
@@ -549,7 +568,7 @@
         height: 460px;
 
         @include d(991) {
-          height: 178px;
+          height: 200px;
         }
       }
     }
@@ -560,9 +579,11 @@
       margin-bottom: 20px;
       position: relative;
       display: block;
+
       @include d(991) {
-        height: 178px;
+        height: 200px;
       }
+
       img,
       picture {
         position: absolute;
@@ -577,6 +598,7 @@
         font-size: 14px;
         margin-bottom: 5px;
         font-weight: 500;
+
         @include d(767) {
           display: none;
         }
@@ -606,7 +628,7 @@
   overflow: hidden;
 
   @include d(991) {
-    padding-top: 100px;
+    padding-top: 60px;
   }
 
   @include d(767) {
@@ -703,9 +725,11 @@
           z-index: 1;
           width: 200px;
         }
+
         @include d(767) {
           right: -40px;
         }
+
         @include d(575) {
           bottom: -150px;
           background-position: bottom;

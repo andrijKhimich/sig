@@ -51,9 +51,8 @@
 
     &_top {
       margin: 0 -15px;
-      // flex-wrap: wrap;
+      
       img, picture {
-        // width: auto;
         width: 100%;
       }
       @include d(991) {

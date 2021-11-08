@@ -168,53 +168,72 @@ document.addEventListener("DOMContentLoaded", function () {
   initKnowledgeSlider();
   initExpertiseMenu();
   initExpertiseMenuBottom();
+  removeChild();
+
   window.addEventListener("resize", function () {
-    if (windowWidth < 991) {
+    console.log(window.innerWidth);
+
+    if (window.innerWidth < 991) {
       initKnowledgeSlider();
+      removeChild();
     }
-    if (windowWidth < 767) {
+    if (window.innerWidth < 767) {
       initExpertiseMenu();
       initExpertiseMenuBottom()
     }
   });
 });
 
+
+function removeChild() {
+  $('.knowledge-slider__item').each(function () {
+    if ($(window).width() < 991) {
+      $(this).contents().unwrap();
+      // console.log(this);
+    }
+  });
+}
+
 function initKnowledgeSlider() {
-  const knowledgeSlider = document.querySelector(
-    "#knowledgeSlider.slick-slider"
-  );
-  if ($(window).width() < 991 && !knowledgeSlider) {
-    $("#knowledgeSlider").slick({
-      slidesToShow: 6,
-      slidesToScroll: 1,
-      dots: false,
-      arrows: false,
-      infinite: false,
-      mobileFirst: true,
-      responsive: [{
-        breakpoint: 991,
-        settings: "unslick",
-      },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 2,
+  setTimeout(function () {
+    const knowledgeSlider = document.querySelector(
+      "#knowledgeSlider.slick-slider"
+    );
+    if ($(window).width() < 991 && !knowledgeSlider) {
+      $("#knowledgeSlider").slick({
+        slidesToShow: 6,
+        slidesToScroll: 1,
+        dots: false,
+        arrows: false,
+        infinite: false,
+        mobileFirst: false,
+        adaptiveHeight: true,
+        responsive: [{
+            breakpoint: 993,
+            settings: "unslick",
           },
-        },
-        {
-          breakpoint: 280,
-          settings: {
-            slidesToShow: 1,
+          {
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 2,
+            },
           },
-        },
-      ],
-    });
-  }
+          {
+            breakpoint: 576,
+            settings: {
+              slidesToShow: 1,
+            },
+          },
+        ],
+      });
+    }
+  }, 100);
+
 }
 
 function initExpertiseMenu() {
-  const knowledgeSlider = document.querySelector("#expertiseMenu.slick-slider");
-  if ($(window).width() < 767 && !knowledgeSlider) {
+  const expertiseMenu = document.querySelector("#expertiseMenu.slick-slider");
+  if ($(window).width() < 767 && !expertiseMenu) {
     $("#expertiseMenu").slick({
       slidesToShow: 2,
       slidesToScroll: 1,
@@ -224,9 +243,9 @@ function initExpertiseMenu() {
       adaptiveHeight: true,
       infinite: true,
       responsive: [{
-        breakpoint: 768,
-        settings: "unslick",
-      },
+          breakpoint: 768,
+          settings: "unslick",
+        },
         {
           breakpoint: 575,
           settings: {
@@ -256,9 +275,9 @@ function initExpertiseMenuBottom() {
       adaptiveHeight: true,
       infinite: true,
       responsive: [{
-        breakpoint: 768,
-        settings: "unslick",
-      },
+          breakpoint: 768,
+          settings: "unslick",
+        },
         {
           breakpoint: 575,
           settings: {
