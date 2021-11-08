@@ -91,10 +91,6 @@
       cursor: pointer;
       transition: color $hover-duration $timing;
 
-      @include d(767) {
-        pointer-events: none;
-      }
-
       &>a,
       &>span {
         position: relative;
@@ -103,6 +99,9 @@
         @include d(767) {
           padding-left: 0;
           padding-right: 20px;
+          display: inline-block;
+          margin-right: 30px;
+          margin-bottom: 10px;
         }
       }
 
@@ -114,6 +113,7 @@
           color: $black;
 
           &::after {
+            right: 5px;
             background-image: url(../img/svg/arrow-down.svg);
           }
         }
@@ -128,14 +128,15 @@
         font-size: 14px;
         flex: 0 0 25%;
         padding-left: 0;
-        padding-right: 10px;
+        // padding-right: 10px;
       }
 
       @include d(767) {
-        padding-right: 20px;
+        // padding-right: 20px;
         flex: 0 0 auto;
         color: $grey;
         font-weight: 400;
+        pointer-events: none;
       }
 
       &:not(:last-child) {
@@ -156,6 +157,7 @@
         &>a,
         &>span {
 
+          // display: inline-block;
           &::before,
           &::after {
             content: "";
