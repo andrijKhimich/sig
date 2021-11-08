@@ -76,10 +76,10 @@
     pointer-events: none;
     left: -100px;
     transition: opacity $hover-duration $timing, left $hover-duration $timing;
+  }
 
-    @include d(575) {
-      width: 100vw;
-    }
+  @include d(575) {
+    width: 100vw;
   }
 
   &.active {
@@ -358,6 +358,7 @@
     height: 12px;
     padding: 0;
     background-color: transparent;
+    z-index: 1;
     border: none;
     transform: translate(0, -50%);
   }
@@ -417,13 +418,25 @@
 
 .menu-item_lg {
   position: static;
-
+  @include d(991) {
+    a {
+      pointer-events: none;
+    }
+  }
   .sub-menu {
     display: flex;
     flex-wrap: nowrap;
     padding: 50px 80px;
     right: 0;
     left: auto;
+
+    &>li:first-child {
+      display: none;
+
+      @include d(991) {
+        display: block;
+      }
+    }
 
     @include d(1199) {
       padding: 20px 30px;

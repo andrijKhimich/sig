@@ -2,7 +2,12 @@
 
 .about-hero {
   padding-bottom: 150px;
-
+  @include d(1199) {
+    padding-bottom: 100px;
+  }
+  @include d(991) {
+    padding-bottom: 60px;
+  }
   &__title {
     display: flex;
     align-self: center;
@@ -11,6 +16,7 @@
 
     @include d(991) {
       justify-content: space-between;
+      margin-bottom: 40px;
     }
 
     @include d(767) {

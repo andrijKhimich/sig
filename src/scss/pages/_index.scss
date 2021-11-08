@@ -108,14 +108,14 @@
       bottom: 0;
       left: 0;
       .read-more_circle {
-        border-color: $black;
+        border-color: $titleColor;
 
         @include d(575) {
           border-color: $titleColor;
         }
 
         .svg-icon_md {
-          stroke: $black;
+          stroke: $titleColor;
 
           @include d(575) {
             stroke: $titleColor;
@@ -358,12 +358,6 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    .btn {
-      @include d(767) {
-        display: none;
-      }
-    }
   }
 
   &__content {
@@ -555,7 +549,7 @@
         height: 460px;
 
         @include d(991) {
-          height: 300px;
+          height: 178px;
         }
       }
     }
@@ -566,7 +560,9 @@
       margin-bottom: 20px;
       position: relative;
       display: block;
-
+      @include d(991) {
+        height: 178px;
+      }
       img,
       picture {
         position: absolute;
@@ -581,6 +577,9 @@
         font-size: 14px;
         margin-bottom: 5px;
         font-weight: 500;
+        @include d(767) {
+          display: none;
+        }
       }
 
       a {

@@ -1,11 +1,19 @@
 @import "../base/variables";
 @import "../base/mixins";
+
 .expertise {
   &-hero {
     padding-bottom: 25px;
 
     @include d(1199) {
       padding-bottom: 0;
+    }
+
+    .about-hero__title {
+      @include d(767) {
+        margin-bottom: 0;
+
+      }
     }
 
     .title-1 {
@@ -87,12 +95,11 @@
         pointer-events: none;
       }
 
-      &>a, &>span {
+      &>a,
+      &>span {
         position: relative;
         padding-left: 15px;
-        // margin-bottom: 5px;
-        // padding-bottom: 10px;
-        // display: block;
+
         @include d(767) {
           padding-left: 0;
           padding-right: 20px;
@@ -102,7 +109,8 @@
       &.slick-current {
         pointer-events: initial;
 
-        &>a, &>span {
+        &>a,
+        &>span {
           color: $black;
 
           &::after {
@@ -144,7 +152,9 @@
 
 
       &_icon {
-        &>a, &>span {
+
+        &>a,
+        &>span {
 
           &::before,
           &::after {
@@ -192,7 +202,8 @@
           color: $titleColor;
           font-weight: 600;
 
-          a, span {
+          a,
+          span {
             &::after {
               transform: rotate(90deg);
               background-color: $titleColor;
@@ -244,7 +255,8 @@
         font-weight: 500;
       }
 
-      &:hover a, span {
+      &:hover a,
+      span {
         color: $titleColor;
         text-decoration: underline;
       }

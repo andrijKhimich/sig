@@ -189,7 +189,7 @@ function initKnowledgeSlider() {
       slidesToScroll: 1,
       dots: false,
       arrows: false,
-      infinite: true,
+      infinite: false,
       mobileFirst: true,
       responsive: [{
         breakpoint: 991,
