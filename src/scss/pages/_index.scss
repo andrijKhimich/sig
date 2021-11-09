@@ -484,6 +484,7 @@
     }
 
     .knowledge-card {
+
       @include d(991) {
         padding: 0 15px;
         flex: 0 0 50vw;
@@ -493,6 +494,14 @@
       @include d(575) {
         flex: 0 0 100vw;
         max-width: 100vw;
+      }
+      &:nth-last-child(-n+4) {
+        .knowledge-card__content {
+          margin-bottom: 30px;
+          // p {
+          //   display: block;
+          // }
+        }
       }
     }
   }
@@ -600,7 +609,9 @@
         font-weight: 500;
 
         @include d(767) {
-          display: none;
+          &:not(:first-of-type) {
+            display: none;
+          }
         }
       }
 
