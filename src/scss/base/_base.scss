@@ -260,7 +260,7 @@ input {
   width: 100%;
   border: none;
   transition: border-color $timing $hover-duration,
-  color $timing $hover-duration;
+    color $timing $hover-duration;
 
   &:focus {
     outline: none;
@@ -541,8 +541,8 @@ textarea {
   padding: 0 29px;
   border: 1px solid transparent;
   transition: color $hover-duration $timing,
-  background-color $hover-duration $timing,
-  border-color $hover-duration $timing;
+    background-color $hover-duration $timing,
+    border-color $hover-duration $timing;
 
   &_primary {
     border-color: $primary;
@@ -582,6 +582,19 @@ textarea {
   a {
     text-decoration: underline;
     font-weight: 500;
+  }
+}
+
+.article-inner {
+  p {
+    strong {
+      color: $black;
+    }
+  }
+
+  a {
+    font-weight: 400;
+    text-decoration: underline;
   }
 }
 
@@ -629,7 +642,7 @@ textarea {
     display: block;
   }
 
-  & > .article-description {
+  &>.article-description {
     padding: 0 15px;
 
     @include d(767) {
@@ -707,6 +720,7 @@ textarea {
   margin-bottom: 40px;
   overflow: hidden;
   display: block;
+  padding: 0 5px;
   @include d(767) {
     margin: 0 auto 40px auto;
     position: relative;
@@ -835,4 +849,3 @@ textarea {
     }
   }
 }
-

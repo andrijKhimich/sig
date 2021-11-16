@@ -120,6 +120,12 @@
     position: relative;
 
     &.active {
+      pointer-events: none;
+
+      .sub-menu {
+        pointer-events: initial;
+      }
+
       &>a {
         &::before {
           transform: rotate(180deg);
@@ -418,11 +424,13 @@
 
 .menu-item_lg {
   position: static;
+
   @include d(991) {
     a {
       pointer-events: none;
     }
   }
+
   .sub-menu {
     display: flex;
     flex-wrap: nowrap;
@@ -435,6 +443,7 @@
 
       @include d(991) {
         display: block;
+        width: 100%;
       }
     }
 
@@ -450,6 +459,7 @@
       padding: 0 0 0 30px;
       flex-wrap: wrap;
       max-width: 100%;
+      width: 100%;
 
       a {
         flex-wrap: wrap;
@@ -458,6 +468,10 @@
     }
 
     &>li {
+      @include d(991) {
+        width: 100%;
+      }
+
       &>a {
         font-weight: bold;
         padding-bottom: 15px;
@@ -481,6 +495,7 @@
           a {
             padding-left: 30px;
             position: relative;
+            pointer-events: initial;
 
             &::before {
               content: "";

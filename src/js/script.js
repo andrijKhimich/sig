@@ -46,26 +46,21 @@ const menu = document.querySelector(".js-menu");
 const burger = document.querySelector(".js-burger");
 
 const toggleHeaderForm = () => {
-  // if (windowWidth > 991) {
   headerForm.classList.toggle("active");
   toggleFormBtn.classList.toggle("active");
   menu.classList.toggle("hidden");
   headerFormInput.value = "";
   burger.classList.toggle("hidden");
-  // }
 };
 
 const submenu = document.querySelector(".sub-menu");
 
 const openMenu = () => {
-  // if (windowWidth < 991) {
   burger.classList.add("active");
   menu.classList.add("active");
-  // }
 };
 
 const closeMenu = () => {
-  // if (windowWidth < 991) {
   burger.classList.remove("active");
   menu.classList.remove("active");
 
@@ -73,7 +68,6 @@ const closeMenu = () => {
   for (let i = 0; i < subMenu.length; i++) {
     subMenu[i].style.maxHeight = null;
   }
-  // }
 };
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -93,6 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
+  
   let accordionItem = document.querySelectorAll(".js-accordion-item");
   for (let i = 0; i < accordionItem.length; i++) {
     accordionItem[i].addEventListener("click", function (e) {

@@ -437,7 +437,7 @@
 .projects-content {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: flex-start;
   padding-bottom: 80px;
 
   &_lg {
