@@ -444,8 +444,6 @@
     padding-bottom: 0;
 
     .card__project {
-      @include d(767) {}
-
       &:first-of-type {
         flex: 0 0 100%;
         max-width: 100%;
@@ -510,16 +508,22 @@
 .card__project {
   display: block;
 
+  @include d(767) {
+    max-width: 100%;
+    flex: 0 0 100%;
+  }
+
   picture,
   img {
     height: 310px;
     overflow: hidden;
     margin-bottom: 20px;
+    object-fit: cover;
 
     @include d(1199) {
       height: 260px;
+      margin-bottom: 0;
     }
-
   }
 
   &:hover {
