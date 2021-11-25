@@ -721,10 +721,11 @@ textarea {
   overflow: hidden;
   display: block;
   padding: 0 5px;
+
   @include d(767) {
     margin: 0 auto 40px auto;
     position: relative;
-    max-width: 49%;
+    width: 49%;
 
     &::before {
       content: "";
