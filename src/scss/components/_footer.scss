@@ -62,25 +62,37 @@
       }
     }
   }
+
   &-icons {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-between;
     margin: 20px 0;
+
     li {
       width: 70px;
+      flex: 0 0 33%;
+      padding: 10px;
       height: 70px;
       position: relative;
-      &:not(:last-child) {
-        margin-right: 10px;
-      }
-      img, picture {
+      margin-bottom: 20px !important;
+
+      // &:not(:last-child) {
+      //   // margin-right: 10px;
+      // }
+      img,
+      picture {
         position: absolute;
         top: 50%;
         left: 50%;
+        width: auto;
+        // max-width: 50%;
         transform: translate(-50%, -50%);
       }
     }
   }
+
   &-box {
     max-width: 20%;
     width: 100%;
