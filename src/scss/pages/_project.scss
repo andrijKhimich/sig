@@ -331,13 +331,25 @@
     margin-bottom: 20px;
   }
 
+  ol {
+    margin: 20px 0 20px 20px;
+    list-style-type: decimal;
+
+    li {
+      list-style-type: decimal;
+
+    }
+  }
+
   ul {
-    margin: 20px 0;
+    margin: 20px 0 20px 20px;
     font-weight: 500;
+    list-style-type: disc;
 
     li {
       position: relative;
       padding-left: 15px;
+      list-style: disc;
 
       &::before {
         content: " ";
@@ -401,7 +413,7 @@
   a {
     color: $titleColor;
   }
-  
+
   &-banner {
     figcaption {
       font-size: 14px;
@@ -852,6 +864,7 @@
 .card__related {
   max-width: 100%;
   width: 100%;
+
   img,
   picture {
     height: 260px;
