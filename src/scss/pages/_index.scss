@@ -9,7 +9,7 @@
     position: absolute;
     bottom: 85px;
     right: 100px;
-    max-width: 100px;
+    max-width: 140px;
     z-index: 10;
 
     @include d(1199) {
@@ -459,36 +459,16 @@
       display: block;
     }
 
-    .slick-track {
-      // display: block;
-    }
-
-    @include d(575) {
-      // margin-right: 20%;
-
-      // .slick-list {
-      // overflow: visible;
-      // }
-    }
-
     &__item {
       padding: 0 15px;
 
       &:first-child,
       &:last-child {
         flex: 0 0 25%;
-
-        // @include d(991) {
-        // flex: 0 0 auto;
-        // }
       }
 
       &:nth-child(2) {
         flex: 0 0 50%;
-
-        // @include d(991) {
-        // flex: 0 0 auto;
-        // }
       }
     }
 
@@ -508,9 +488,6 @@
       &:nth-last-child(-n+4) {
         .knowledge-card__content {
           margin-bottom: 30px;
-          // p {
-          //   display: block;
-          // }
         }
       }
     }
