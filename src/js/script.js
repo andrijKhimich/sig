@@ -87,7 +87,7 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
   }
-  
+
   let accordionItem = document.querySelectorAll(".js-accordion-item");
   for (let i = 0; i < accordionItem.length; i++) {
     accordionItem[i].addEventListener("click", function (e) {
@@ -291,6 +291,11 @@ function initExpertiseMenuBottom() {
 }
 
 $(document).ready(function () {
+  function unwrappEl() {
+    let img = $(".article img");
+    img.unwrap();
+  }
+  unwrappEl();
   // if ($('.inner-page').length > 0) {
   //   setInnerHeader();
   // } else {

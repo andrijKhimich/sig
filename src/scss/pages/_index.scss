@@ -558,12 +558,6 @@
       max-width: 100%;
     }
 
-    // @include d(991) {
-    //   &:not(:first-child) {
-    //     display: none;
-    //   }
-    // }
-
     &_lg {
       flex: 0 0 640px;
       max-width: 640px;

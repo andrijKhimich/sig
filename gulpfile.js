@@ -12,7 +12,7 @@ const gulp = require("gulp"),
   babel = require("gulp-babel"),
   imagemin = require("gulp-imagemin"),
   webp = require("gulp-webp"),
-  webphtml = require("gulp-webp-html"),
+  // webphtml = require("gulp-webp-html"),
   webpcss = require("gulp-webpcss"),
   svgSprite = require("gulp-svg-sprite"),
   cheerio = require("gulp-cheerio"),
@@ -33,7 +33,7 @@ gulp.task("html", function () {
   return gulp
     .src(["src/html/**/*.html", "!src/html/**/_*.html"])
     .pipe(fileInclude())
-    .pipe(webphtml())
+    // .pipe(webphtml())
     .pipe(gulp.dest("dist"))
     .pipe(
       browserSync.reload({
