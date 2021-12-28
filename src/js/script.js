@@ -289,6 +289,14 @@ function initExpertiseMenuBottom() {
     });
   }
 }
+// let test = document.getElementById("test");
+window.addEventListener("mouseover", function (event) {
+  // highlight the mouseenter target
+  // event.target.style.color = "purple";
+
+  // reset the color after a short delay
+  console.log(event.target);
+}, false);
 
 $(document).ready(function () {
   function unwrappEl() {

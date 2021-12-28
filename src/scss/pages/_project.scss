@@ -351,16 +351,16 @@
       padding-left: 15px;
       list-style: disc;
 
-      &::before {
-        content: " ";
-        width: 3px;
-        height: 3px;
-        border-radius: 50%;
-        background-color: $black;
-        position: absolute;
-        top: 10px;
-        left: 5px;
-      }
+      // &::before {
+      //   content: " ";
+      //   width: 3px;
+      //   height: 3px;
+      //   border-radius: 50%;
+      //   background-color: $black;
+      //   position: absolute;
+      //   top: 10px;
+      //   left: 5px;
+      // }
     }
   }
 

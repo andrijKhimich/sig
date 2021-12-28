@@ -135,10 +135,11 @@
 
     &:hover {
       @include rh(991) {
-        .sub-menu {
+        &>.sub-menu {
           opacity: 1;
           transform: translate(0, 0);
           pointer-events: initial;
+          visibility: visible;
         }
 
         &>a {
@@ -181,7 +182,7 @@
   color: $white;
   position: absolute;
   top: 100%;
-  // right: 0;
+  visibility: hidden;
   left: 0;
   transform: translate(0, 10px);
   opacity: 0;
