@@ -397,15 +397,15 @@
     // margin: 0 auto 30px auto;
   }
 
-  figure {
-    margin: 40px 30px 40px 0;
-    float: left;
+  // figure {
+  //   margin: 40px 30px 40px 0;
+  //   float: left;
 
-    @include d(767) {
-      float: none;
+  //   @include d(767) {
+  //     float: none;
 
-    }
-  }
+  //   }
+  // }
 
   figcaption {
     font-size: 14px;
