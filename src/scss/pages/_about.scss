@@ -70,7 +70,9 @@
       color: $titleColor;
       max-width: 660px;
     }
-
+    a {
+      color: $titleColor
+    }
     img,
     picture {
       margin-bottom: 40px;
