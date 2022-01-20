@@ -120,7 +120,7 @@
     position: relative;
 
     &.active {
-      pointer-events: none;
+      // pointer-events: none;
 
       .sub-menu {
         pointer-events: initial;
@@ -182,7 +182,6 @@
   color: $white;
   position: absolute;
   top: 100%;
-  visibility: hidden;
   left: 0;
   transform: translate(0, 10px);
   opacity: 0;
@@ -427,7 +426,7 @@
   position: static;
 
   @include d(991) {
-    a {
+    &>a {
       pointer-events: none;
     }
   }

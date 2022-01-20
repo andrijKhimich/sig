@@ -5,6 +5,10 @@
   height: 100vh;
   position: relative;
 
+  @include d(991) {
+    height: 80vh;
+  }
+
   &-logo {
     position: absolute;
     bottom: 85px;
@@ -169,7 +173,7 @@
     }
 
     @include d(991) {
-      font-size: 48px;
+      // font-size: 48px;
       color: $white;
     }
 
