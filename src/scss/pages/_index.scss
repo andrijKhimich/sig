@@ -873,6 +873,15 @@
     margin: 0 auto 80px auto;
   }
 
+  @include d(1024) {
+    margin: 0 auto 260px auto;
+  }
+
+  @include d(991) {
+    margin: 0 auto 80 auto;
+
+  }
+
   &__box {
     position: relative;
   }
