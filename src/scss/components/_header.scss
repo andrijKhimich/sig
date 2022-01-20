@@ -4,7 +4,7 @@
   top: 0;
   left: 0;
   padding: 29px 0 0 0;
-  z-index: 2;
+  z-index: 11;
   color: $grey2;
   border-bottom: 1px solid rgba($white, 0.4);
 
@@ -119,8 +119,19 @@
   &-item_icon {
     position: relative;
 
+    @include d(991) {
+      &>a {
+        pointer-events: none;
+      }
+    }
+
     &.active {
-      // pointer-events: none;
+
+      @include d(991) {
+        &>a {
+          pointer-events: initial;
+        }
+      }
 
       .sub-menu {
         pointer-events: initial;
