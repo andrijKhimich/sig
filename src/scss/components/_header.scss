@@ -144,8 +144,8 @@
       }
     }
 
-    &:hover {
-      @include rh(991) {
+    @include rh(991) {
+      &:hover {
         &>.sub-menu {
           opacity: 1;
           transform: translate(0, 0);
