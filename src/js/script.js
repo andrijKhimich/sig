@@ -69,7 +69,6 @@ const closeMenu = () => {
   for (let i = 0; i < subMenu.length; i++) {
     subMenu[i].style.maxHeight = null;
   }
-  document.getElementsByClassName("menu-item_icon").classList.remove("active");
 };
 
 document.addEventListener("DOMContentLoaded", function () {
