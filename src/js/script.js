@@ -114,7 +114,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let accordionProjectsSublist = this.parentElement.querySelector(
         ".projects-accordion__sublist"
       );
-      console.log(this);
+      // console.log(this);
       if (accordionProjectsSublist.style.maxHeight) {
         accordionProjectsSublist.style.maxHeight = null;
       } else {
@@ -133,7 +133,7 @@ document.addEventListener("DOMContentLoaded", function () {
       let accordionProjectsSublistInner = this.parentElement.querySelector(
         ".projects-accordion__subitem ul"
       );
-      console.log(this);
+      // console.log(this);
       if (accordionProjectsSublistInner.style.maxHeight) {
         accordionProjectsSublistInner.style.maxHeight = null;
       } else {
@@ -153,18 +153,34 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 
-  initKnowledgeSlider();
   initExpertiseMenu();
   initExpertiseMenuBottom();
+  initKnowledgeSlider();
   removeChild();
+
 
   window.addEventListener("resize", function () {
     console.log(window.innerWidth);
+    const sliderItem = $('.knowledge-slider__item');
+    // console.log(sliderItem);
+    // console.log(sliderItem.length);
 
     if (window.innerWidth < 991) {
       initKnowledgeSlider();
-      removeChild();
+
     }
+    if (window.innerWidth > 991 && sliderItem.length < 3) {
+      // const sliderItems = $(".knowledge-card");
+      // const slicedArray = sliderItems.slice(0, 2);
+      // const slicedArraySec = sliderItems.slice(3, 3);
+      // const slicedArrayLast = sliderItems.slice(3, 7);
+
+      // console.log("add")
+      // slicedArray.wrapAll('<div class="knowledge-slider__item" />');
+      // slicedArraySec.wrapAll('<div class="knowledge-slider__item" />');
+      // slicedArrayLast.wrapAll('<div class="knowledge-slider__item" />');
+    }
+
     if (window.innerWidth < 767) {
       initExpertiseMenu();
       initExpertiseMenuBottom()
@@ -172,50 +188,44 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-
 function removeChild() {
   $('.knowledge-slider__item').each(function () {
-    if ($(window).width() < 991) {
-      $(this).contents().unwrap();
-    }
+    // if ($(window).width() < 991) {
+    $(this).contents().unwrap();
+    // }
   });
 }
 
-function initKnowledgeSlider() {
-  setTimeout(function () {
-    const knowledgeSlider = document.querySelector(
-      "#knowledgeSlider.slick-slider"
-    );
-    if ($(window).width() < 991 && !knowledgeSlider) {
-      $("#knowledgeSlider").slick({
-        slidesToShow: 6,
-        slidesToScroll: 1,
-        dots: false,
-        arrows: false,
-        infinite: false,
-        mobileFirst: false,
-        adaptiveHeight: true,
-        responsive: [{
-            breakpoint: 993,
-            settings: "unslick",
-          },
-          {
-            breakpoint: 992,
-            settings: {
-              slidesToShow: 2,
-            },
-          },
-          {
-            breakpoint: 576,
-            settings: {
-              slidesToShow: 1,
-            },
-          },
-        ],
-      });
-    }
-  }, 100);
+function addChild() {
 
+}
+
+
+function initKnowledgeSlider() {
+  const slider = document.querySelector("#knowledgeSlider.slick-slider");
+  // console.log(slider);
+  if ($(window).width() <= 991 && !slider) {
+    $("#knowledgeSlider").slick({
+      slidesToShow: 1,
+      slidesToScroll: 1,
+      dots: false,
+      arrows: false,
+      mobileFirst: true,
+      adaptiveHeight: true,
+      infinite: true,
+      responsive: [{
+          breakpoint: 992,
+          settings: "unslick",
+        },
+        {
+          breakpoint: 575,
+          settings: {
+            slidesToShow: 2,
+          },
+        },
+      ],
+    });
+  }
 }
 
 function initExpertiseMenu() {
@@ -281,16 +291,13 @@ function initExpertiseMenuBottom() {
     });
   }
 }
-window.addEventListener("mouseover", function (event) {
-  console.log(event.target);
-}, false);
 
 $(document).ready(function () {
-  function unwrappEl() {
+  function unWrapEl() {
     let img = $(".article img");
     img.unwrap();
   }
-  unwrappEl();
+  unWrapEl();
 });
 
 svg4everybody();

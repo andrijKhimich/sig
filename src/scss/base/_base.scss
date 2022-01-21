@@ -365,6 +365,16 @@ textarea {
       color: $black;
     }
   }
+
+  .contact {
+    @include d(1124) {
+      padding-top: 250px;
+    }
+
+    @include d(991) {
+      padding-top: 60px;
+    }
+  }
 }
 
 .container {
@@ -450,6 +460,7 @@ textarea {
   align-items: center;
   font-weight: 500;
   font-size: 16px;
+
   // position: relative;
   // z-index: 100;
   span {
